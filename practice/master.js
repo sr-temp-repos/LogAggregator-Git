@@ -3,61 +3,71 @@
 function logFileProcessor() {
   /*Import nessary API*/
   var fs = require("fs");
-  var readline = require("readline");
-
-  var fileN = "gitLogFile2";
-
-  var lookup = fs.createReadStream(fileN);
-  var rlLookup = readline.createInterface({
-      input: lookup
-  });
 
   var gitLogsMasterJson = [];
   // var startUnitFlag = 0;
   var unitObj = {};
   var startUnitFlag = 0;
+  var fileN = "inputLogs/gitLogFile";
+  var unitIndex = 0;
   /*Read each line*/
-  rlLookup.on('line', function(line) {
+  confData = fs.readFileSync(fileN).toString().split('\n');
+  // console.log(confData);
+  confData.map(function(line) {
     var temp ;
+    // console.log("____LINE_____");
+    // console.log(line);
     if((temp = line.match(/^commit/))){ //when the line is the first of its unit
       if(startUnitFlag !== 0){
-        console.log("Array before push: ");
-        console.log(gitLogsMasterJson);
-        console.log("Not first line : ");
-        console.log(unitObj);
+        // console.log("First If");
+        // console.log("Array before push: ");
+        // console.log(gitLogsMasterJson);
+        // console.log("Not first line : ");
+        // console.log(unitObj);
 
-        gitLogsMasterJson.push(unitObj);
-        console.log("Array after push: ");
-        console.log(gitLogsMasterJson);
+        // gitLogsMasterJson[gitLogsMasterJson.length] = unitObj;
+        // console.log("Array after push: ");
+        // console.log(gitLogsMasterJson);
+        unitIndex++;
+        gitLogsMasterJson[unitIndex] = {};
       }
       else {
-          console.log("First Line"+line);
-          startUnitFlag = 1;
+        // console.log("first else");
+        // console.log("First Line"+line);
+        startUnitFlag = 1;
+        gitLogsMasterJson[unitIndex] = {};
       }
     }
     else
       if((temp = line.match(/^Author:\s+(.*)<(.*)>/))) {
-        unitObj.authorName = temp[1];
-        unitObj.authorEmail = temp[2];
+        // console.log("second If");
+        gitLogsMasterJson[unitIndex].authorName = temp[1];
+        gitLogsMasterJson[unitIndex].authorEmail = temp[2];
       }
       else
-        if((temp = line.match(/^Merge/)))
-          unitObj.type = "Merge";
+        if((temp = line.match(/^Merge/))) {
+          // console.log("Third If");
+          gitLogsMasterJson[unitIndex].type = "Merge";
+        }
         else
-          if((temp = line.match(/^Date:\s+(.*)/)))
-            unitObj.date = temp[1];
+          if((temp = line.match(/^Date:\s+(.*)/))) {
+            // console.log("fourth If");
+            gitLogsMasterJson[unitIndex].date = temp[1];
+          }
           else
-            if((temp = line.match(/(\d+) file changed, (\d+) insertion\(\+\), (\d+) deletion\(\-\)/))) {
-              unitObj.fileChanged = temp[1];
-              unitObj.insertions = temp[2];
-              unitObj.deletions = temp[3];
-              unitObj.type = "Commit";
+            if((temp = line.match(/ (\d+) files changed, (\d+) insertions\(\+\), (\d+) deletions\(\-\)/))) {
+              // console.log("fifth if");
+              gitLogsMasterJson[unitIndex].fileChanged = temp[1];
+              gitLogsMasterJson[unitIndex].insertions = temp[2];
+              gitLogsMasterJson[unitIndex].deletions = temp[3];
+              gitLogsMasterJson[unitIndex].type = "Commit";
             }
-  });
-  rlLookup.on('close', function(){
-    console.log(gitLogsMasterJson);
+
+        // console.log("out");
   });
 
+// console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefffffffffffffffffffffff");
+fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson));
 }
 
 logFileProcessor();
