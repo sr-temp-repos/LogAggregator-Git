@@ -54,20 +54,34 @@ function logFileProcessor() {
             // console.log("fourth If");
             gitLogsMasterJson[unitIndex].date = temp[1];
           }
-          else
-            if((temp = line.match(/ (\d+) files changed, (\d+) insertions\(\+\), (\d+) deletions\(\-\)/))) {
+          else{
+            if((temp = line.match(/ (\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(\-\)/))) {
               // console.log("fifth if");
               gitLogsMasterJson[unitIndex].fileChanged = temp[1];
               gitLogsMasterJson[unitIndex].insertions = temp[2];
-              gitLogsMasterJson[unitIndex].deletions = temp[3];
+                gitLogsMasterJson[unitIndex].deletions = temp[3];
               gitLogsMasterJson[unitIndex].type = "Commit";
             }
-
+            else if((temp = line.match(/ (\d+) files? changed, (\d+) insertions?\(\+\)$/))) {
+              // console.log("fifth if");
+              gitLogsMasterJson[unitIndex].fileChanged = temp[1];
+              gitLogsMasterJson[unitIndex].insertions = temp[2];
+              gitLogsMasterJson[unitIndex].deletions = "0";
+              gitLogsMasterJson[unitIndex].type = "Commit";
+            }
+            else if((temp = line.match(/ (\d+) files? changed, (\d+) deletions?\(\-\)$/))) {
+              // console.log("fifth if");
+              gitLogsMasterJson[unitIndex].fileChanged = temp[1];
+              gitLogsMasterJson[unitIndex].deletions = temp[2];
+              gitLogsMasterJson[unitIndex].insertions = "0";
+              gitLogsMasterJson[unitIndex].type = "Commit";
+            }
+          }
         // console.log("out");
   });
 
 // console.log("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeefffffffffffffffffffffff");
-fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson));
+fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson,null,'\t'));
 }
 
 logFileProcessor();
