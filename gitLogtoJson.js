@@ -6,11 +6,12 @@
 /*Import of necessary API*/
 var fs = require("fs");
 
+function compare()
 /*main function which processes the file in the desired manner*/
 function gitLogFileProcessor() {
     var gitLogsMasterJson = [];
     var startUnitFlag = 0; //Flag to set for start of unit
-    var fileName = "inputLogs/gitLogFile2";
+    var fileName = "inputLogs/gitLogFile";
     var unitIndex = 0; //Index for gitLogsMasterJson array
 
     /*Split file into lines*/
