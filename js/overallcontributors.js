@@ -1,5 +1,3 @@
-
-
 var margin1 = {top: 40, right: 20, bottom: 60, left: 40},
     width1 = 1000;
     height1 = 200;

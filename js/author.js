@@ -24,7 +24,7 @@ var tip = d3.tip()
     return "<strong>no_Of_Commits:</strong> <span style='color:red'>" + d.no_Of_Commits + "</span>";
   })
 
-var svg2 = d3.select(".authors_div .samp1").append("svg")
+var svg2 = d3.select(".samp1").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
