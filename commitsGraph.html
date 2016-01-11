@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .line{
+    fill: none;
+    stroke: blue;
+    stroke-width: 2px;
+  }
+
+  .bar {
+    fill: orange;
+  }
+
+  .bar:hover {
+    fill: orangered ;
+  }
+
+  .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
+  </style>
+</head>
+<body>
+
+  <div id="svgBar"></div>
+  <div id="svg" style="top:700px"></div>
+
+  <script src="js/d3.min.js"></script>
+  <script src="js/d3.tip.v0.6.3.js"></script>
+
+  <script>
+
+  var margin = {top: 40, right: 20, bottom: 30, left: 40},
+  width = 960 - margin.left - margin.right,
+  height = 300 - margin.top - margin.bottom;
+
+  var dayData={};
+
+  var x = d3.scale.ordinal()
+  .rangeRoundBands([0, width], .1);
+
+  var y = d3.scale.linear()
+  .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+  .scale(x)
+  .orient("bottom")
+  .ticks(10);
+
+  var yAxis = d3.svg.axis()
+  .scale(y)
+  .orient("left");
+
+  var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>No of Commits:</strong> <span style='color:red'>" + d.noCommits + "</span>";
+  })
+
+  var svgBar = d3.select("#svgBar").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  svgBar.call(tip);
+
+  d3.json("inputLogs/commitsJson.json", function(error, data) {
+
+    dayData=data[0].dailyCommitList;
+    x.domain(data.map(function(d) { return d.weekNo; }));
+    y.domain([0, d3.max(data, function(d) { return d.noCommits; })]);
+
+    svgBar.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+    svgBar.append("g")
+    .attr("class", "y axis")
+    .call(yAxis)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy", ".71em")
+    .style("text-anchor", "end")
+    .text("noCommits");
+
+    svgBar.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("class", "bar")
+    .attr("x", function(d) { return x(d.weekNo); })
+    .attr("width", x.rangeBand())
+    .attr("y", function(d) { return y(d.noCommits); })
+    .attr("height", function(d) { return height - y(d.noCommits); })
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide)
+    .on("click", function(d) {
+      dayData=d.dailyCommitList;
+      changeLineData();
+    });
+
+    var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var xScale = d3.scale.ordinal()
+    .domain(weekdays)
+    .rangePoints([0, width]);
+
+    var yScale = d3.scale.linear()
+    .domain([0, 30])
+    .range([height, 0]);
+
+    var axisX = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom")
+    .innerTickSize(-height)
+    .outerTickSize(0)
+    .tickPadding(10);
+
+    var axisY = d3.svg.axis()
+    .scale(yScale)
+    .orient("left")
+    .innerTickSize(-width)
+    .outerTickSize(0)
+    .tickPadding(10);
+
+    var line = d3.svg.line()
+    .x(function(d) {return xScale(d.day); })
+    .y(function(d) { return yScale(d.noCommit); });
+
+    var svg = d3.select("#svg").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .attr("align","center")
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr("align","center");
+
+    svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(axisX)
+    .append("text")
+    .attr("y", 50)
+    .attr("x",width/2)
+    .style("text-anchor", "middle")
+    .text("Week Numbers--->");
+
+    svg.append("g")
+    .attr("class", "y axis")
+    .call(axisY)
+    .append("text")
+    .attr("transform", "rotate(-90)")
+    .attr("y", 6)
+    .attr("dy",-40)
+    .style("text-anchor", "end")
+    .text("No of Commits");
+
+    var path= svg.append("path")
+    .attr("class", "line")
+    .attr("d", line(dayData));
+
+    function changeLineData()
+    {
+      path.attr("d", line(dayData));
+    }
+  });
+  </script>
+</body>
+</html>
