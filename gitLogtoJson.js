@@ -52,7 +52,10 @@ function gitLogFileProcessor() {
             gitLogsMasterJson[unitIndex].type = "Merge";
         } else
         if ((lineExtractions = line.match(/^Date:\s+(.*)/))) { //Fetching line with Date
-            gitLogsMasterJson[unitIndex].date = lineExtractions[1];
+
+              // gitLogsMasterJson[unitIndex].date = lineExtractions[1];
+              gitLogsMasterJson[unitIndex].date = new Date(lineExtractions[1]);
+
         } else {
             /*Commit with both insertions and deletions*/
             if ((lineExtractions = line.match(/ (\d+) files? changed, (\d+) insertions?\(\+\), (\d+) deletions?\(\-\)/))) {
@@ -78,7 +81,7 @@ function gitLogFileProcessor() {
         }
     });
     gitLogsMasterJson.sort(compare);
-    console.log(gitLogsMasterJson);
+    console.log(JSON.stringify(gitLogsMasterJson, null, '\t'));
     /*Writing the array of objects to JSON*/
     fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
       if(err)
