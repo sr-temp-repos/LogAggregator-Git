@@ -1,0 +1,1822 @@
+[
+    {
+        "weekNo": 2,
+        "noCommits": 10,
+        "year": 2016,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 1
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 1
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 0
+            },
+            {
+                "day": "Friday",
+                "noCommit": 0
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 1,
+        "noCommits": 1,
+        "year": 2016,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 0
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 0
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 0
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 0
+            },
+            {
+                "day": "Friday",
+                "noCommit": 1
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 0
+            }
+        ]
+    },
+    {
+        "weekNo": 53,
+        "noCommits": 35,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 9
+            },
+            {
+                "day": "Monday",
+                "noCommit": 7
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 2
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 0
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 52,
+        "noCommits": 25,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 5
+            },
+            {
+                "day": "Monday",
+                "noCommit": 4
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 2
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 51,
+        "noCommits": 36,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 11
+            },
+            {
+                "day": "Friday",
+                "noCommit": 3
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 50,
+        "noCommits": 36,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 4
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 4
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 49,
+        "noCommits": 39,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 11
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 48,
+        "noCommits": 40,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 1
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 7
+            }
+        ]
+    },
+    {
+        "weekNo": 47,
+        "noCommits": 34,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 5
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 6
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 46,
+        "noCommits": 47,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 10
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 11
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 6
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 45,
+        "noCommits": 64,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 29
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 10
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 44,
+        "noCommits": 41,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 9
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 11
+            },
+            {
+                "day": "Friday",
+                "noCommit": 2
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 43,
+        "noCommits": 37,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 42,
+        "noCommits": 39,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 5
+            },
+            {
+                "day": "Friday",
+                "noCommit": 4
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 41,
+        "noCommits": 64,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 9
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 13
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 16
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 11
+            },
+            {
+                "day": "Friday",
+                "noCommit": 8
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 40,
+        "noCommits": 36,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 6
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 3
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 9
+            }
+        ]
+    },
+    {
+        "weekNo": 39,
+        "noCommits": 36,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 3
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 38,
+        "noCommits": 46,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 5
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 13
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 1
+            },
+            {
+                "day": "Friday",
+                "noCommit": 8
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 5
+            }
+        ]
+    },
+    {
+        "weekNo": 37,
+        "noCommits": 41,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 6
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 36,
+        "noCommits": 36,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 2
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 8
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 35,
+        "noCommits": 56,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 8
+            },
+            {
+                "day": "Monday",
+                "noCommit": 7
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 9
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 10
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 5
+            }
+        ]
+    },
+    {
+        "weekNo": 34,
+        "noCommits": 51,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 15
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 5
+            }
+        ]
+    },
+    {
+        "weekNo": 33,
+        "noCommits": 47,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 1
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 27
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 32,
+        "noCommits": 19,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 1
+            },
+            {
+                "day": "Friday",
+                "noCommit": 3
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 31,
+        "noCommits": 25,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 2
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 30,
+        "noCommits": 17,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 1
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 2
+            },
+            {
+                "day": "Friday",
+                "noCommit": 3
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 29,
+        "noCommits": 22,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 6
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 2
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 3
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 28,
+        "noCommits": 35,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 3
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 8
+            },
+            {
+                "day": "Friday",
+                "noCommit": 4
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 27,
+        "noCommits": 24,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 26,
+        "noCommits": 22,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 5
+            },
+            {
+                "day": "Friday",
+                "noCommit": 4
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 0
+            }
+        ]
+    },
+    {
+        "weekNo": 25,
+        "noCommits": 46,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 4
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 11
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 11
+            }
+        ]
+    },
+    {
+        "weekNo": 24,
+        "noCommits": 37,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 5
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 10
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 23,
+        "noCommits": 47,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 5
+            },
+            {
+                "day": "Monday",
+                "noCommit": 11
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 2
+            },
+            {
+                "day": "Friday",
+                "noCommit": 4
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 22,
+        "noCommits": 46,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 9
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 21,
+        "noCommits": 34,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 3
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 12
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 20,
+        "noCommits": 22,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 3
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 6
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 0
+            }
+        ]
+    },
+    {
+        "weekNo": 19,
+        "noCommits": 51,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 6
+            },
+            {
+                "day": "Monday",
+                "noCommit": 14
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 5
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 8
+            }
+        ]
+    },
+    {
+        "weekNo": 18,
+        "noCommits": 38,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 6
+            },
+            {
+                "day": "Monday",
+                "noCommit": 4
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 2
+            },
+            {
+                "day": "Friday",
+                "noCommit": 8
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 17,
+        "noCommits": 28,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 5
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 5
+            },
+            {
+                "day": "Friday",
+                "noCommit": 2
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 16,
+        "noCommits": 43,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 11
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 5
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 5
+            }
+        ]
+    },
+    {
+        "weekNo": 15,
+        "noCommits": 35,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 5
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 2
+            }
+        ]
+    },
+    {
+        "weekNo": 14,
+        "noCommits": 33,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 4
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 10
+            },
+            {
+                "day": "Friday",
+                "noCommit": 5
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 13,
+        "noCommits": 48,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 3
+            },
+            {
+                "day": "Monday",
+                "noCommit": 5
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 13
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 8
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 6
+            }
+        ]
+    },
+    {
+        "weekNo": 12,
+        "noCommits": 46,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 1
+            },
+            {
+                "day": "Monday",
+                "noCommit": 1
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 7
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 13
+            },
+            {
+                "day": "Friday",
+                "noCommit": 12
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 11,
+        "noCommits": 46,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 4
+            },
+            {
+                "day": "Monday",
+                "noCommit": 8
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 3
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 7
+            }
+        ]
+    },
+    {
+        "weekNo": 10,
+        "noCommits": 64,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 20
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 9
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 8
+            }
+        ]
+    },
+    {
+        "weekNo": 9,
+        "noCommits": 74,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 7
+            },
+            {
+                "day": "Monday",
+                "noCommit": 6
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 3
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 13
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 17
+            },
+            {
+                "day": "Friday",
+                "noCommit": 24
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 8,
+        "noCommits": 33,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 5
+            },
+            {
+                "day": "Monday",
+                "noCommit": 3
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 5
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 4
+            },
+            {
+                "day": "Friday",
+                "noCommit": 7
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 1
+            }
+        ]
+    },
+    {
+        "weekNo": 7,
+        "noCommits": 51,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 7
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 11
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 10
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 4
+            }
+        ]
+    },
+    {
+        "weekNo": 6,
+        "noCommits": 38,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 0
+            },
+            {
+                "day": "Monday",
+                "noCommit": 2
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 12
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 4
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 8
+            },
+            {
+                "day": "Friday",
+                "noCommit": 9
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 3
+            }
+        ]
+    },
+    {
+        "weekNo": 5,
+        "noCommits": 53,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 2
+            },
+            {
+                "day": "Monday",
+                "noCommit": 9
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 8
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 7
+            },
+            {
+                "day": "Friday",
+                "noCommit": 13
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 8
+            }
+        ]
+    },
+    {
+        "weekNo": 4,
+        "noCommits": 71,
+        "year": 2015,
+        "dailyCommitList": [
+            {
+                "day": "Sunday",
+                "noCommit": 7
+            },
+            {
+                "day": "Monday",
+                "noCommit": 14
+            },
+            {
+                "day": "Tuesday",
+                "noCommit": 10
+            },
+            {
+                "day": "Wednesday",
+                "noCommit": 6
+            },
+            {
+                "day": "Thursday",
+                "noCommit": 10
+            },
+            {
+                "day": "Friday",
+                "noCommit": 17
+            },
+            {
+                "day": "Saturday",
+                "noCommit": 7
+            }
+        ]
+    }
+]
