@@ -6,11 +6,22 @@
 /*Import of necessary API*/
 var fs = require("fs");
 
+function compare(leftElement,rightElement)  {
+  var lefDate = new Date(leftElement.date);
+  var rightDate = new Date(rightElement.date)
+  if(lefDate<rightDate)
+    return -1;
+  else
+    if(lefDate>rightDate)
+      return 1;
+    else
+      return 0;
+}
 /*main function which processes the file in the desired manner*/
 function gitLogFileProcessor() {
     var gitLogsMasterJson = [];
     var startUnitFlag = 0; //Flag to set for start of unit
-    var fileName = "inputLogs/gitLogFile2";
+    var fileName = "inputLogs/gitLogFile";
     var unitIndex = 0; //Index for gitLogsMasterJson array
 
     /*Split file into lines*/
@@ -66,6 +77,8 @@ function gitLogFileProcessor() {
             }
         }
     });
+    gitLogsMasterJson.sort(compare);
+    console.log(gitLogsMasterJson);
     /*Writing the array of objects to JSON*/
     fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
       if(err)
