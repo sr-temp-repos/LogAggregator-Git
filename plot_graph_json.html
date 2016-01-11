@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+.wrap_class{
+  text-align: center;
+  background-color: 	#C8C8C8;
+}
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 2px;
+}
+
+.bar {
+  fill: orange;
+}
+
+.bar:hover {
+  fill: orangered ;
+}
+
+.bar_selected{
+  fill:orangered;
+}
+
+.x.axis path {
+  display: block;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+<body>
+  <div class="wrap_class">
+    <h1>Graph of Number of Commits on Weekly Basis in a Year</h1>
+    <hr>
+
+    <select style="float:right" id="year_select">
+      <option>2009</option>
+      <option>2010</option>
+      <option>2011</option>
+      <option>2012</option>
+      <option>2013</option>
+      <option>2014</option>
+      <option>2015</option>
+      <option>2016</option>
+    </select>
+    <p  style="float:right;font-size:20px;margin:0px">
+      Select Date:
+    </p>
+    <div class="svg-container">
+      <!-- <svg height=200 width=200px style="background-color:yellow">
+        <rect width=20 height=20px onClick="click_bar()"></rect>
+      </svg> -->
+    </div>
+    <div class="svg-graph2">
+      <!-- <svg height=200 width=200px style="background-color:yellow">
+        <rect width=20 height=20px onClick="click_bar()"></rect>
+      </svg> -->
+    </div>
+  </div>
+
+<script src="jQuery-1.11.3.js" type="text/javascript"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script>
+
+Array.prototype.myFind = function(obj) {
+    return this.filter(function(item) {
+        for (var prop in obj)
+            if (!(prop in item) || obj[prop] !== item[prop])
+                 return false;
+        return true;
+    });
+};
+
+
+var my_data =[];
+$('#year_select').on('change',function(){
+  //console.log("the selection is changed in the dropdown");
+plot_weekly_graph();
+});
+
+// var items = [
+//   {itemId:1,isRight:0},
+//   {itemId:2,isRight:1},
+//   {itemId:3,isRight:0}
+// ];
+$(function(){
+  plot_weekly_graph();
+});
+
+function click_bar(mydata1)
+{
+      console.log("we are calling the clickbar function");
+      console.log("Mydata1:-"+mydata1)
+      var margin = {top: 20, right: 20, bottom: 30, left: 50},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+
+    //var formatDate = d3.time.format("%d-%b-%y");
+    $('.svg-graph2 svg').remove();
+    // var x = d3.scale.ordinal()
+    //     .rangeRoundBands([0, width]);
+
+   var x = d3.scale.ordinal()
+            .rangePoints([0, width]);
+
+    var y = d3.scale.linear()
+        .range([height, 0]);
+
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient("bottom")
+        .innerTickSize(-height)
+        .outerTickSize(5)
+        .tickPadding(10);
+
+    var yAxis = d3.svg.axis()
+        .scale(y)
+        .orient("left")
+        .innerTickSize(-width)
+        .outerTickSize(5)
+        .tickPadding(10);
+
+    //console.log("monday:-"+x("Monday"));
+    var line = d3.svg.line()
+        .x(function(d) { return x(d["DAY"]); })
+        .y(function(d) { return y(d.daily_commits); });
+
+    var svg = d3.select(".svg-graph2").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      //var data = my_data;
+
+      console.log(mydata1);
+      var new_data = [];
+      var week_day = ["Sunday","Monday","Tuesday","Wednusday","Thrusday","Friday","Saturday"];
+      for(var i=0;i<week_day.length;i++)
+      {
+        //console.log(week_day[i]);
+        var obj={};
+        if(mydata1[week_day[i]]!==undefined)
+        {
+          //console.log(week_day[i]);
+          obj["DAY"]=week_day[i];
+          obj["daily_commits"]=mydata1[week_day[i]];
+          new_data.push(obj);
+        }
+        else
+        {
+          obj["DAY"]=week_day[i];
+          obj["daily_commits"]=0;
+          new_data.push(obj);
+        }
+        console.log(obj);
+      }
+
+      //console.log("monday:-"+x("Monday"));
+      var data = new_data;
+      console.log(data.length);
+      // var data = new_data;
+      // console.log(x["Sunday"]);
+      // console.log(x["Monday"]);
+      // console.log(x["Tuesday"]);
+      // console.log(x["Wednusday"]);
+      // console.log(x["Thrusday"]);
+      // console.log(x["Friday"]);
+      // console.log(x["Saturday"]);
+      x.domain(data.map(function(d) { return (d.DAY); }));
+      //y.domain([0,d3.max(data, function(d) { return d.daily_commits; })]);
+      var max_data=((20 > d3.max(data, function(d) { return d.daily_commits; }))?20:d3.max(data, function(d) { return d.daily_commits; }));
+      y.domain([0,max_data]);
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+      svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Daily Commits");
+
+      //var svg1=svg.append("g").attr("transform","translate(100,0)");
+          svg.append("path")
+          .datum(data)
+          .attr("class", "line")
+          .attr("d", line);
+
+          svg.selectAll("circle").data(data).enter().append("circle")
+          .attr("cx",function(d){return x(d["DAY"]);})
+          .attr("cy",function(d){return y(d["daily_commits"]);})
+          .attr("r",10)
+          .attr("fill","green");
+
+}
+
+function plot_weekly_graph()
+{
+  var str=$('#year_select option:selected').text();
+  //console.log("year selected is:" + str);
+
+$('svg').remove();
+
+  var margin = {top: 40, right: 20, bottom: 30, left: 40},
+      width = 1260 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
+
+//  var formatPercent = d3.format(".0%");
+
+  var x = d3.scale.ordinal()
+      .rangeRoundBands([0, width], .1);
+
+  var y = d3.scale.linear()
+      .range([height, 0]);
+
+  var xAxis = d3.svg.axis()
+      .scale(x)
+      .orient("bottom");
+
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left");
+      //.tickFormat(formatPercent);
+
+  var tip = d3.tip()
+    .attr('class', 'd3-tip')
+    .offset([-10, 0])
+    .html(function(d) {
+      return "<strong>Weekly Commits:</strong> <span style='color:red'>" + d.weekly_commits+ "</span>" +"</br><strong>Sun,</strong><span style='color:red'>" + d.date + "</span>"  ;
+    })
+
+  var svg = d3.select(".svg-container").append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  svg.call(tip);
+  //
+  d3.json("map_json.json", function(error, data) {
+    my_data = data.myFind({year:parseInt(str)});
+    //console.log(my_data);
+    data= my_data;
+      x.domain(data.map(function(d) { return d.week_no; }));
+      y.domain([0, d3.max(data, function(d) { return d.weekly_commits; })]);
+
+      svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis);
+
+      svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+        .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Number of commits");
+
+      svg.selectAll(".bar")
+          .data(data)
+        .enter().append("rect")
+          .attr("class", "bar")
+          //.attr("data",function(d){return x(d.week_no)};)
+          .attr("x", function(d) { return x(d.week_no); })
+          .attr("width", x.rangeBand())
+          .attr("y", function(d) { return y(d.weekly_commits); })
+          .attr("height", function(d) { return height - y(d.weekly_commits); })
+          .on('mouseover', tip.show)
+          .on('mouseout', tip.hide)
+          .on('click',function(d){
+            //console.log(d.new_obj);
+            $(this).add("class","bar_selected");
+            console.log(this);
+            click_bar(d.new_obj);
+          });
+
+
+  });
+
+
+
+}
+
+// then use:
+// var arrayFound = items.myFind({isRight:0});
+// console.log(arrayFound);
+
+//on click of the rect bar execute another section of the graph
+
+
+
+
+
+
+</script>
