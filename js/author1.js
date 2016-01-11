@@ -1,9 +1,9 @@
-var margin = {top: 40, right: 20, bottom: 60, left: 60},
-    width = 350;
+var margin = {top: 40, right: 20, bottom: 60, left: 30},
+    width = 500;
     height = 200;
 
 var x = d3.scale.ordinal()
-    .rangeRoundBands([15, width], .1);
+    .rangeRoundBands([10, width], .1);
 
 var y = d3.scale.linear()
     .range([height, 0]);
@@ -24,7 +24,7 @@ var tip = d3.tip()
     return "<strong>no_Of_Commits:</strong> <span style='color:red'>" + d.no_Of_Commits + "</span>";
   })
 
-var svg1 = d3.select(".authors_div .samp1").append("svg")
+var svg1 = d3.select(".authors_div .samp2").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -32,7 +32,7 @@ var svg1 = d3.select(".authors_div .samp1").append("svg")
 
 svg1.call(tip);
 
-d3.json("./outputJsons/jsonsAuthor/AlexKocharin.json",function(error, data) {
+d3.json("./outputJsons/jsonsAuthor/AuthorRank_2.json",function(error, data) {
   //data.sort(function(a, b) { return b.no_Of_Commits - a.no_Of_Commits; });
   x.domain(data.map(function(d) { return d.month; }));
   y.domain([0, d3.max(data, function(d) { return d.no_Of_Commits; })]);
