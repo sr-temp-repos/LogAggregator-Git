@@ -1,12 +1,20 @@
+/*******************************************************************/
+/*Authors : Aayush Aditya and Arul************************/
+/*Created Date : 09-01-2015*****************************************/
+/*This script converts the master json to find the per months commits done*************/
+
+/*Import of necessary API*/
 var fs = require('fs');
 var path = require('path');
 var jsonObj = require("./outputJsons/gitLogsMaster.json");
-var commitValue = 0;var lastCommitValue = 0;
+var commitValue = 0;//counter for adding no. of commits
+var lastCommitValue = 0;//counter for finding the last entry's  no. of commits
 var json = [];
 
+//for iterating through master json
 for (var i = 0; i < jsonObj.length; i++) {
-  var splittedDate = new Date(((jsonObj[i])["date"])).toString().split(" ");
-  var splittedDateLast = new Date(((jsonObj[(jsonObj.length - 1)]["date"]))).toString().split(" ");
+  var splittedDate = new Date(((jsonObj[i])["date"])).toString().split(" ");// returns the current date splitted in an array
+  var splittedDateLast = new Date(((jsonObj[(jsonObj.length - 1)]["date"]))).toString().split(" ");// returns the last date splitted in an array
 
   // if (((jsonObj[i])["type"]) == "Commit"){
     if((splittedDate[1] == splittedDateLast[1] )&&(splittedDate[3] == splittedDateLast[3])){
@@ -15,7 +23,7 @@ for (var i = 0; i < jsonObj.length; i++) {
     }
   }
     else{
-      var splittedDateNext = new Date(((jsonObj[i+1])["date"])).toString().split(" ");
+      var splittedDateNext = new Date(((jsonObj[i+1])["date"])).toString().split(" ");// returns the next to current date splitted in an array
 
       if ((splittedDate[1] == splittedDateNext[1] ) && (splittedDate[3] == splittedDateNext[3])) {
         if (((jsonObj[i])["type"]) == "Commit"){
@@ -23,7 +31,7 @@ for (var i = 0; i < jsonObj.length; i++) {
     }
   }
       else {
-        var tmp = {};
+        tmp = {};
         tmp["month"]=splittedDate[1] + " " + splittedDate[3];
         tmp["no_Of_Commits"]= commitValue + 1;
         commitValue = 0;
@@ -31,18 +39,15 @@ for (var i = 0; i < jsonObj.length; i++) {
         json.push(tmp);
       }
     }
-  // }
 }
-var tmp = {};
+tmp = {};
 tmp["month"]=splittedDateLast[1] + " " + splittedDateLast[3];
 tmp["no_Of_Commits"]= lastCommitValue;
-// Add object to list
+// Adds object
 json.push(tmp);
-// fs.writeFile('jsonFileForOverallCommits.json', JSON.stringify(json,null,'\t') , function (err)
-// {
-//   if (err) return console.log(err);
-// });
-var FileLocation = path.join(__dirname, 'outputJsons',"jsonFileForOverallCommitsForContributorsGraph.json");
+/*Setting the path location to write*/
+var FileLocation = path.join(__dirname, 'outputJsons',"jsonFileForOverallCommitsForContributorsGraph1.json");
+/*Writing the array of objects to JSON*/
 fs.writeFile(FileLocation,JSON.stringify(json,null,'\t'), 'utf8', function(err) {
   console.log("File  was  created successfully");
 });
