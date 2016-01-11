@@ -68,7 +68,7 @@ d3.json("./outputJsons/jsonFileForOverallCommitsForContributorsGraph.json",funct
       .attr("x", function(d) { return x1(d.month); })
       .attr("width", x1.rangeBand())
       .attr("y", function(d) { return y1(d.no_Of_Commits); })
-      .attr("height", function(d) { return height - y1(d.no_Of_Commits); })
+      .attr("height", function(d) { return height1 - y1(d.no_Of_Commits); })
       .on('mouseover', tip.show)
       .on('mouseout', tip.hide)
 
