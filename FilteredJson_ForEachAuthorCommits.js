@@ -69,7 +69,7 @@ for (var j = 0; j < jsonObjAuthor.length; j++) {
 //     console.log("File  was  created successfully");
 //   });
    var authorFileLocation = path.join(__dirname, 'outputJsons/jsonsAuthor', "AuthorRank_" + (j+1) +  ".json");
-  fs.writeFile(authorFileLocation,JSON.stringify(json), 'utf8', function(err) {
+  fs.writeFile(authorFileLocation,JSON.stringify(json,null,'\t'), 'utf8', function(err) {
                      console.log("File was  created successfully");
 
                      });

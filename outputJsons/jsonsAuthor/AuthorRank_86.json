@@ -1,1 +1,18 @@
-[{"month":"Jul 2015","no_Of_Commits":1},{"month":"Sep 2015","no_Of_Commits":4},{"month":"Nov 2015","no_Of_Commits":2},{"month":"Dec 2015","no_Of_Commits":2}]
+[
+	{
+		"month": "Jul 2015",
+		"no_Of_Commits": 1
+	},
+	{
+		"month": "Sep 2015",
+		"no_Of_Commits": 4
+	},
+	{
+		"month": "Nov 2015",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Dec 2015",
+		"no_Of_Commits": 2
+	}
+]
