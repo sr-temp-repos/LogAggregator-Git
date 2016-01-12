@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Website Title & Description for Search Engine purposes -->
+    <title>Log Aggregator</title>
+    <meta charset="utf-8" />
+  <!-- Mobile viewport optimized -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="./lib/bootstrap.min.css" rel="stylesheet">
+  <link href="./lib/style.css" rel="stylesheet">
+
+</head>
+
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.bar {
+  fill: green;
+}
+
+.bar:hover {
+  fill: orangered ;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbar1">
+                    <ul class="nav navbar-nav navbar-text top-navbar">
+                        <li><a href="./index.html">Home</a></li>
+            						<li><a href="#" >Sample</a></li>
+                    </ul>
+			        	</div>
+			      </div>
+ </nav><!-- end of navbar -->
+
+    <div class="container">
+
+        <div class="row">
+
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Log Aggregator</h3>
+                </div> <!-- end panel-heading -->
+                <div class="panel-body overall">
+
+                </div>
+
+                <a href="#" target="_blank" class="btn btn-warning btn-block">Commits per Year</a>
+            </div> <!-- end panel -->
+        </div>
+
+        </div>
+
+        <!-- for Author Graph -->
+
+          <div class="col-sm-6">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Author Graph</h3>
+                  </div> <!-- end panel-heading -->
+                  <div class="panel-body left1 samp1">
+                  </div>
+              </div> <!-- end panel -->
+          </div> <!-- end of col -->
+
+          <div class="col-sm-6">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h3 class="panel-title">Author Graph</h3>
+                  </div> <!-- end panel-heading -->
+                  <div class="panel-body right1 samp2">
+                  </div>
+              </div> <!-- end panel -->
+          </div> <!-- end of col -->
+
+
+
+
+
+    </div> <!-- end of container -->
+
+        <script src="./lib/jquery.js"></script>-->
+        <script src="./js/overallcontributors.js"></script>
+        <script src="./js/allAuthor.js"></script>
+
+</body>
+</html>
