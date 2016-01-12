@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf8">
-  <title>New File</title>
   <meta charset="utf-8">
   <style>
 
@@ -10,27 +8,37 @@
     font: 10px sans-serif;
   }
 
-  .axis path,
+  .axis path {
+    fill: none;
+  }
   .axis line {
     fill: none;
-    stroke: #000;
+    stroke: #eee;
     shape-rendering: crispEdges;
+  }
+
+  .axis {
+    fill: #aaa;
+    font-size: 10px;
   }
 
   .line{
     fill: none;
-    stroke: blue;
+    stroke: #1db34f;
     stroke-width: 2px;
   }
 
+  .domain path {
+    fill:none;
+    stroke:none;
+  }
   .bar {
-    fill: orange;
+    fill: #f17f49;
   }
 
-  .bar:hover {
-    fill: orangered ;
+  .colorStyle{
+    fill: #bd380f ;
   }
-
   .d3-tip {
     line-height: 1;
     font-weight: bold;
@@ -59,72 +67,21 @@
     top: 100%;
     left: 0;
   }
-
-  #svgBar,#svg{
-    margin: auto;
-    overflow:hidden;
-    clear:both;
-  }
-
-  .holder{
-    text-align: center;
-    background-color: #ccffff;
-    overflow:hidden;
-  }
   </style>
-  <script src="jquery-1.11.3.js" type="text/javascript"></script>
 </head>
 <body>
 
-<div class="holder">
-  <h1>Graph PLotting Number of Commits on Weekly and Daily basis</h1>
-  <hr>
-  <select style="float:right" id="year_select">
-    <option>2009</option>
-    <option>2010</option>
-    <option>2011</option>
-    <option>2012</option>
-    <option>2013</option>
-    <option>2014</option>
-    <option>2015</option>
-    <option>2016</option>
-  </select>
-  <p  style="float:right;font-size:20px;margin:0px">
-    Select Year:
-  </p>
   <div id="svgBar"></div>
   <div id="svg" style="top:700px"></div>
-</div>
-
 
   <script src="js/d3.min.js"></script>
   <script src="js/d3.tip.v0.6.3.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
 
   <script>
 
-(function(){
-  console.log("this will be called when the document is ready");
-  plot_the_graph();
-})();
-
-$('#year_select').on('change',function(){
-  console.log("this is called when the button is clicked");
-  plot_the_graph();
-});
-
-function plot_the_graph()
-{
-  Array.prototype.myFind = function(obj) {
-      return this.filter(function(item) {
-          for (var prop in obj)
-              if (!(prop in item) || obj[prop] !== item[prop])
-                   return false;
-          return true;
-      });
-  };
-  $('svg').remove();
   var margin = {top: 40, right: 20, bottom: 30, left: 40},
-  width = 1160 - margin.left - margin.right,
+  width = 960 - margin.left - margin.right,
   height = 300 - margin.top - margin.bottom;
 
   var dayData={};
@@ -142,7 +99,8 @@ function plot_the_graph()
 
   var yAxis = d3.svg.axis()
   .scale(y)
-  .orient("left");
+  .orient("left")
+  .innerTickSize(-width);
 
   var tip = d3.tip()
   .attr('class', 'd3-tip')
@@ -160,9 +118,9 @@ function plot_the_graph()
   svgBar.call(tip);
 
   d3.json("inputLogs/commitsJson.json", function(error, data) {
-    var str=$('#year_select option:selected').text();
-    data = data.myFind({year:parseInt(str)});
-    dayData=data[0].dailyCommitList;
+
+    dayData=data[data.length-1].dailyCommitList;
+    weekNo=data[data.length-1].weekNo;
     x.domain(data.map(function(d) { return d.weekNo; }));
     y.domain([0, d3.max(data, function(d) { return d.noCommits; })]);
 
@@ -172,7 +130,7 @@ function plot_the_graph()
     .call(xAxis);
 
     svgBar.append("g")
-    .attr("class", "y axis")
+    .attr("class", "axis")
     .call(yAxis)
     .append("text")
     .attr("transform", "rotate(-90)")
@@ -181,7 +139,7 @@ function plot_the_graph()
     .style("text-anchor", "end")
     .text("noCommits");
 
-    svgBar.selectAll(".bar")
+    var lastBar=  svgBar.selectAll(".bar")
     .data(data)
     .enter().append("rect")
     .attr("class", "bar")
@@ -191,10 +149,26 @@ function plot_the_graph()
     .attr("height", function(d) { return height - y(d.noCommits); })
     .on('mouseover', tip.show)
     .on('mouseout', tip.hide)
-    .on("click", function(d) {
+    .on("click", function(d){
+      d3.selectAll('.bar').style("fill", "#f17f49");
+      d3.select(this).style("fill", "#bd380f");
       dayData=d.dailyCommitList;
       changeLineData();
+      d3.select("circle.y")
+      .transition()
+      .delay(100)
+      .attr("transform","translate(" + (x(d.weekNo) +7)+ "," +235+ ")");
     });
+
+    d3.select(lastBar[0][lastBar[0].length-1])
+    .style("fill", "#bd380f");
+
+    // append the circle at the intersection
+    svgBar.append("circle")
+    .attr("class", "y")
+    .style("fill", "#bd380f")
+    .attr("r", 2)
+    .attr("transform","translate(" + (x(weekNo) +7)+ "," +235+ ")");
 
     var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var xScale = d3.scale.ordinal()
@@ -208,15 +182,12 @@ function plot_the_graph()
     var axisX = d3.svg.axis()
     .scale(xScale)
     .orient("bottom")
-    .innerTickSize(0)
-    .outerTickSize(0)
     .tickPadding(10);
 
     var axisY = d3.svg.axis()
     .scale(yScale)
     .orient("left")
     .innerTickSize(-width)
-    .outerTickSize(0)
     .tickPadding(10);
 
     var line = d3.svg.line()
@@ -255,41 +226,33 @@ function plot_the_graph()
     .attr("class", "line")
     .attr("d", line(dayData));
 
-    var cir = svg.selectAll('circle').data(dayData).enter().append('g');
-    //   .attr("transform","translate("+function(d){return xScale(d.day);}+ ","+ function(d){return yScale(d.noCommit);}+")");
-// +function(d){return xScale(d.day);}+","+function(d){return yScale(d.noCommit);}+
-      cir.append("circle")
-       .attr('cx',function(d){return xScale(d.day);})
-       .attr('cy',function(d){return yScale(d.noCommit);})
-       .attr('r',5)
-       .attr('fill','green');
-    cir.append('text')
-    .attr("class","text_disp")
-    .attr("x",function(d){return xScale(d.day);}).attr("y",function(d){return yScale(d.noCommit)-10;}).text(function(d){return d.noCommit;});
-
-
+    svg.selectAll('circle').data(dayData).enter().append("circle")
+    .attr('cx',function(d){return xScale(d.day);})
+    .attr('cy',function(d){return yScale(d.noCommit);})
+    .attr('r',4)
+    .attr("class","cir")
+    .attr('fill','#1db34f')
+    .style("stroke", "green");
 
     function changeLineData()
     {
-      path.transition().delay(200)
+      d3.select("path.line")
+      .transition()
+      .delay(100)
       .attr("d", line(dayData));
 
-      var cir = svg.selectAll('circle').data(dayData);
-      cir.transition().delay(200)
-         .attr('cx',function(d){return xScale(d.day);})
-         .attr('cy',function(d){return yScale(d.noCommit);})
-         .attr('r',5)
-         .attr('fill','green');
+      d3.selectAll("circle.cir")
+      .data(dayData)
+      .transition()
+      .delay(30)
+      .attr('cx',function(d){return xScale(d.day);})
+      .attr('cy',function(d){return yScale(d.noCommit);})
+      .attr('r',4);
 
-       svg.selectAll('.text_disp').data(dayData)
-       .transition().delay(200)
-       .attr("x",function(d){return xScale(d.day);})
-       .attr("y",function(d){return yScale(d.noCommit)-10;})
-      .text(function(d){return d.noCommit;});
     }
   });
 
-}
-    </script>
+
+  </script>
 </body>
 </html>
