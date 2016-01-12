@@ -10,7 +10,7 @@ Date.prototype.getWeek = function() {
   var firstSundayofYear = new Date(firstJan);
   firstSundayofYear.setDate((firstJan).getDate()+(7-n));
   return Math.ceil((((this - firstSundayofYear) / 86400000)/7));
-}
+};
 
 function d3DataGen (paramWeekWiseObj) {
   var transformedArray  = [];
@@ -42,16 +42,16 @@ masterGitLogJson.map(function(gitLogObj){
         weekWiseStatsObj[currObjYear][currObjWeek] = {};
         weekWiseStatsObj[currObjYear][currObjWeek].insertions = parseInt(gitLogObj.insertions);
         weekWiseStatsObj[currObjYear][currObjWeek].deletions = parseInt(gitLogObj.deletions)*-1;
-        weekWiseStatsObj[currObjYear][currObjWeek].weekNum = currObjWeek;
-        weekWiseStatsObj[currObjYear][currObjWeek].date = currObjYear;
+        // weekWiseStatsObj[currObjYear][currObjWeek].weekNum = currObjWeek+"/"+currObjYear;
+        // weekWiseStatsObj[currObjYear][currObjWeek].date = currObjYear;
         if(currObjWeek) {
           var day = currObjDate.getDay();
           week_sunday = new Date(currObjDate);
           week_sunday.setDate(week_sunday.getDate()-day);//Generates the date of the sunday of the current object date week
-          weekWiseStatsObj[currObjYear][currObjWeek].weekStartDate = week_sunday;
+          weekWiseStatsObj[currObjYear][currObjWeek].date = week_sunday;
         }
         else {
-          weekWiseStatsObj[currObjYear][currObjWeek].weekStartDate = new Date('1/1/'+currObjYear.toString());
+          weekWiseStatsObj[currObjYear][currObjWeek].date = new Date('1/1/'+currObjYear.toString());
         }
 
       }
