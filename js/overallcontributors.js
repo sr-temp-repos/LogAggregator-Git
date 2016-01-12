@@ -1,3 +1,6 @@
+/*******************************************************************/
+/*Authors : Aayush Aditya and Arul************************/
+/*Created Date : 12-01-2015*****************************************/
 var margin1 = {top: 40, right: 20, bottom: 60, left: 40},
     width1 = 1000;
     height1 = 200;
@@ -31,7 +34,7 @@ var svg = d3.select(".overall").append("svg")
     .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
 
 svg.call(tip);
-
+// loags the json file to fetch data
 d3.json("./outputJsons/jsonFileForOverallCommitsForContributorsGraph.json",function(error, data) {
   //data.sort(function(a, b) { return b.no_Of_Commits - a.no_Of_Commits; });
   x1.domain(data.map(function(d) { return d.month; }));
@@ -44,9 +47,9 @@ d3.json("./outputJsons/jsonFileForOverallCommitsForContributorsGraph.json",funct
       .selectAll("text")
                        .style("text-anchor", "end")
                        .attr("dx", "-.8em")
-                       .attr("dy", ".15em")
+                       .attr("dy", "-.5em")
                        .attr("transform", function(d) {
-                           return "rotate(-65)"
+                           return "rotate(-90)"
                            });
 
 
