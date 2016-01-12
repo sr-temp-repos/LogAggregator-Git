@@ -26,185 +26,132 @@ body {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 var margin = {
-  top: 20,
-  right: 20,
-  bottom: 30,
-  left: 50
-},
-width = 800 - margin.left - margin.right,
-height = 600 - margin.top - margin.bottom;
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 50
+  },
+  width = 1000 - margin.left - margin.right,
+  height = 600 - margin.top - margin.bottom;
 
 var parseDate = d3.time.format("%y-%b-%d").parse,
-formatPercent = d3.format(".0%");
+  formatPercent = d3.format(".0%");
 
 var x = d3.time.scale()
-.range([0, width]);
+  .range([0, width]);
 
 var y = d3.scale.linear()
-.range([height, 0]);
+  .range([height, 0]);
 
-var color = d3.scale.category10();
+var color = d3.scale.category20();
 
 var xAxis = d3.svg.axis()
-.scale(x)
-.orient("bottom");
+  .scale(x)
+  .orient("bottom");
 
 var yAxis = d3.svg.axis()
-.scale(y)
-.orient("left");
+  .scale(y)
+  .orient("left");
 
 var area = d3.svg.area()
-.x(function(d) {
-  return x(d.weekStartDate);
-})
-.y0(function(d) {
-  return y(d.y0);
-})
-.y1(function(d) {
-  return y(d.y0 + d.y);
-});
+  .x(function(d) {
+    return x(d.date);
+  })
+  .y0(function(d) {
+    return y(d.y0);
+  })
+  .y1(function(d) {
+    return y(d.y0 + d.y);
+  });
 
 var stack = d3.layout.stack()
-.values(function(d) {
-  return d.values;
-});
+  .values(function(d) {
+    return d.values;
+      console.log(d.va);
+  });
+
 
 var svg = d3.select("body").append("svg")
-.attr("width", width + margin.left + margin.right)
-.attr("height", height + margin.top + margin.bottom)
-.append("g")
-.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-d3.json("outputJsons/codeFrequency.json", function(error, data) {
-    data.map(function(obj) {
-      obj["insertions"] = parseFloat(obj["insertions"]);
-      obj["deletions"] = parseFloat(obj["deletions"]);
-      return obj;
-    });
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  console.log("length "+data.length);
-  console.log(Object.keys(data[0]));
-  console.log(typeof data[0]["New York"]);
-  //
-  //
-  // var data = [{
-  // "date": "11-Oct-13",
-  // "A": 41.62,
-  // "B": -22.36
-  // }, {
-  // "date": "11-Oct-14",
-  // "A": 41.95,
-  // "B": -22.15
-  // }, {
-  // "date": "11-Oct-15",
-  // "A": 37.64,
-  // "B": -10.77
-  // }, {
-  // "date": "11-Oct-16",
-  // "A": 37.27,
-  // "B": -24.65
-  // }, {
-  // "date": "11-Oct-17",
-  // "A": 42.74,
-  // "B": -21.87
-  // }];
+var data = [{
+  "date": "11-Oct-13",
+  "A": 41.62,
+  "B": -22.36
+}, {
+  "date": "11-Oct-14",
+  "A": 41.95,
+  "B": -22.15
+}, {
+  "date": "11-Oct-15",
+  "A": 37.64,
+  "B": -10.77
+}, {
+  "date": "11-Oct-16",
+  "A": 37.27,
+  "B": -24.65
+}, {
+  "date": "11-Oct-17",
+  "A": 42.74,
+  "B": -21.87
+}];
 
-  // y.domain([-24.77, 42.74]);
-  console.log(data.length);
-  console.log(Object.keys(data[0]));
-  // console.log(typeof data[0]["A"]);
+// y.domain([-24.77, 42.74]);
+color.domain(d3.keys(data[0]).filter(function(key) {
+  return key !== "date";
+}));
 
+data.forEach(function(d) {
+  d.date = parseDate(d.date);
+});
 
-    // color.domain(d3.keys(data[0]).filter(function(key) {
-    // return (key !== "weekStartDate" || key !== "weekNum" || key !== "date");
-    // }));
-  color.domain(d3.keys(data[0]).filter(function(key) {
-  return (key !== "weekStartDate" && key !=="weekNum" && key !=="date" );
-  }));
-  console.log("***************color***************");
-
-
-    console.log("**************data**************");
-    console.log(data[0]);
-
-  console.log(color.domain());
-  // data.forEach(function(d) {
-  //   console.log("**************d before**************");
-  //   console.log(d.date);
-  //   d.date = parseDate(d.date);
-  //   console.log("**************d**************");
-  //   console.log(d.date);
-  //   return d;
-  // });
-
-  console.log("**************data**************");
-  console.log(data[0]);
-  var browsers = color.domain().map(function(name) {
-    console.log("name");
-    console.log(name);
+var browsers = color.domain().map(function(name) {
   return {
     name: name,
     values: data.map(function(d) {
-      console.log("Values");
-      console.log(d);
-      var tempObj =  {
-        date: d.weekStartDate,
+      return {
+        date: d.date,
         y: d[name],
         y0: 0
       };
-      console.log("tempObj");
-      console.log(tempObj);
-      return tempObj;
     })
   };
-  });
+});
 
-  console.log("Bowsers");
-  console.log(browsers);
-  //
-  // var browsers = color.domain().map(function(name) {
-  // return {
-  //   name: name,
-  //   values: data.map(function(d) {
-  //     return {
-  //       date: d.date, temperature: +d[name]
-  //     };
-  //   })
-  // };
-  // });
-  //
-  y.domain([
-    d3.min(browsers, function(c) { return d3.min(c.values, function(v) { return v.y; }); }),
-    d3.max(browsers, function(c) { return d3.max(c.values, function(v) { return v.y; }); })
-  ]);
-  console.log("check1");
-  x.domain(d3.extent(data, function(d) {
-  return d.weekStartDate;
-  }));
-console.log("check2");
-  var vars = svg.selectAll(".vars")
+y.domain([
+  d3.min(browsers, function(c) { return d3.min(c.values, function(v) { return v.continent; }); }),
+  d3.max(browsers, function(c) { return d3.max(c.values, function(v) { return v.continent; }); })
+]);
+
+x.domain(d3.extent(data, function(d) {
+  return d.date;
+}));
+
+var vars = svg.selectAll(".vars")
   .data(browsers)
   .enter().append("g")
   .attr("class", "vars");
 
-console.log("check3");
-
-  vars.append("path")
+vars.append("path")
   .attr("class", "area")
   .attr("d", function(d) {
-    console.log("Inside Function");
     return area(d.values);
   })
   .style("fill", function(d) {
     return color(d.name);
   });
-console.log("check4");
-  svg.append("g")
+
+
+svg.append("g")
   .attr("class", "x axis")
   .attr("transform", "translate(0," + height + ")")
   .call(xAxis);
-console.log("check5");
-  svg.append("g")
+
+svg.append("g")
   .attr("class", "y axis")
   .call(yAxis);
-});
-</script>
+
+  </script>
