@@ -6,13 +6,13 @@ var fs = require('fs');
 masterJson.sort(function(a,b){
   var dateA=new Date(a.date);
   var dateB=new Date(b.date);
-  if(dateA<dateB){
+  if(dateA>dateB){
     return -1;
   }
   return 1;
 });
 
-//Data structure of data for the graph
+//Data structute of data for the graph
 function dailyCommit(day,noCommit){
   this.day=day;
   this.noCommit=noCommit;
@@ -30,7 +30,7 @@ var weeklyCommitsList=[];
 var dailyCommitList=[];
 resetDailyCommit();
 var date = new Date(masterJson[0].date);
-var week=new weeklyCommit(getWeek(date),1,date.getFullYear());
+var week=new weeklyCommit(getWeek(date),1,date.getFullYear());;
 var dayCommit=new dailyCommit(date.getDay(),1);
 
 //Looping the array to create the data Structure
@@ -38,10 +38,10 @@ for(var i=1;i<masterJson.length;i++){
   var date = new Date(masterJson[i].date);
   var weekNo=getWeek(date);
   if(weekNo!==week.weekNo){
-    // if(weeklyCommitsList.length==52)  //breaking the code for only 52 records
-    // {
-    //   break;
-    // }
+    if(weeklyCommitsList.length==52)
+    {
+      break;
+    }
     dailyCommitList[dayCommit.day].noCommit=dayCommit.noCommit;
     week.dailyCommitList=dailyCommitList;
     weeklyCommitsList.push(week);
@@ -69,17 +69,10 @@ fs.writeFile( "./inputLogs/commitsJson.json", gdpINDJson, function(err) {
   }
 });
 
-//Function to get week no of the day in year starting from the 1st sunday
+//Function to get week no of the day in year
 function getWeek(date) {
-  // var onejan = new Date(date.getFullYear(),0,1);
-  // return Math.ceil((((date - onejan) / 86400000) + onejan.getDay()+1)/7);
   var onejan = new Date(date.getFullYear(),0,1);
-  var n = onejan.getDay();
-
-  var sunday = new Date(onejan);
-  sunday.setDate((onejan).getDate()+(7-n));
-  console.log(sunday+":"+date +"/"+Math.ceil(((((date - sunday) / 86400000))/7)) +"/"+(date - sunday));
-  return Math.ceil((((date - sunday) / 86400000)/7));
+  return Math.ceil((((date - onejan) / 86400000) + onejan.getDay()+1)/7);
 }
 
 //Data structure for the initail weekday data
