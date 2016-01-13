@@ -1,3 +1,6 @@
+<!-- /*******************************************************************/
+/*Authors : Aayush Aditya and Arul************************/
+/*Created Date : 12-01-2015*****************************************/ -->
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +13,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Bootstrap CSS -->
   <link href="./lib/bootstrap.min.css" rel="stylesheet">
-  <link href="./lib/style.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +35,7 @@ body {
 }
 
 .bar:hover {
-  fill: orangered ;
+  fill: black ;
 }
 
 .x.axis path {
@@ -74,9 +77,11 @@ body {
 <nav class="navbar navbar-default navbar-fixed-top">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbar1">
+
                     <ul class="nav navbar-nav navbar-text top-navbar">
-                        <li><a href="./index.html">Home</a></li>
-            						<li><a href="#" >Sample</a></li>
+                        <li><a href="./index.html"><u>Contributors</u></a></li>
+            						<li><a href="./commitsGraph.html" ><u>Commits</u></a></li>
+                        <li><a href="#" ><u>Code Frequency</u></a></li>
                     </ul>
 			        	</div>
 			      </div>
@@ -89,42 +94,22 @@ body {
         <div class="col-sm-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Log Aggregator</h3>
+                    <h3 class="panel-title"><b>Plot Of Contributors Graph </b>: <u>nodejs/node</u> Repository</h3>
                 </div> <!-- end panel-heading -->
                 <div class="panel-body overall">
 
                 </div>
 
-                <a href="#" target="_blank" class="btn btn-warning btn-block">Commits per Year</a>
+                <a href="#" target="_blank" class="btn btn-warning btn-block">Contributions to master, excluding merge commits (per Month Data)</a>
+
+
             </div> <!-- end panel -->
+            <br><h1><b>Top 100 Authors Commits Graph</b></h1>
         </div>
 
         </div>
 
         <!-- for Author Graph -->
-
-          <div class="col-sm-6">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Author Graph</h3>
-                  </div> <!-- end panel-heading -->
-                  <div class="panel-body left1 samp1">
-                  </div>
-              </div> <!-- end panel -->
-          </div> <!-- end of col -->
-
-          <div class="col-sm-6">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                      <h3 class="panel-title">Author Graph</h3>
-                  </div> <!-- end panel-heading -->
-                  <div class="panel-body right1 samp2">
-                  </div>
-              </div> <!-- end panel -->
-          </div> <!-- end of col -->
-
-
-
 
 
     </div> <!-- end of container -->

@@ -1,8 +1,15 @@
 body {
   font: 14px sans-serif;
 }
-
-.right1,.left1,.overall{
+h1{
+  text-align: center;
+  color: blue;
+}
+u,a
+{
+  color: blue;
+}
+.panel-body,.overall{
   background:#FFF8DC;
 }
 
