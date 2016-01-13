@@ -10,14 +10,18 @@ Date.prototype.getWeek = function() {
   var firstSundayofYear = new Date(firstJan);
   firstSundayofYear.setDate((firstJan).getDate()+(7-n));
   return Math.ceil((((this - firstSundayofYear) / 86400000)/7));
-}
+};
 
 function d3DataGen (paramWeekWiseObj) {
-  var transformedArray  = [];
+  var transformedArray  = {};
   for(year in paramWeekWiseObj){
-    for(week in paramWeekWiseObj[year]){
-      transformedArray.push(paramWeekWiseObj[year][week]);
+    if (transformedArray[year] === undefined) {
+      transformedArray[year] = [];
     }
+      for(week in paramWeekWiseObj[year]){
+        transformedArray[year].push(paramWeekWiseObj[year][week]);
+      }
+
   }
   return transformedArray;
 }
@@ -43,7 +47,7 @@ masterGitLogJson.map(function(gitLogObj){
         weekWiseStatsObj[currObjYear][currObjWeek].insertions = parseInt(gitLogObj.insertions);
         weekWiseStatsObj[currObjYear][currObjWeek].deletions = parseInt(gitLogObj.deletions)*-1;
         weekWiseStatsObj[currObjYear][currObjWeek].weekNum = currObjWeek;
-        weekWiseStatsObj[currObjYear][currObjWeek].date = currObjYear;
+        // weekWiseStatsObj[currObjYear][currObjWeek].date = currObjYear;
         if(currObjWeek) {
           var day = currObjDate.getDay();
           week_sunday = new Date(currObjDate);
