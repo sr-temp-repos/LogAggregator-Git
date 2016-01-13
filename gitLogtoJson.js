@@ -8,11 +8,11 @@ var fs = require("fs");
 
 function compare(leftElement,rightElement)  {
   var lefDate = new Date(leftElement.date);
-  var rightDate = new Date(rightElement.date)
-  if(lefDate<rightDate)
+  var rightDate = new Date(rightElement.date);
+  if(lefDate>rightDate)
     return -1;
   else
-    if(lefDate>rightDate)
+    if(lefDate<rightDate)
       return 1;
     else
       return 0;
