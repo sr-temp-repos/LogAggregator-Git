@@ -1,32 +1,53 @@
+<!--
+Authors : Sridharan M and Pranay Gandhi
+Created Date : 07-01-2015
+This script converts the raw git log data into structured json file -->
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <title>Age Wise Chart</title>
+    <title>Code Frequency Chart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- bootstrap CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
-    <!-- Custom Css -->
-    <!-- <link rel="stylesheet" href="includes/css/style.css"> -->
-
     <!-- Include Modernizr in the head, before any other Javascript -->
-    <!-- <script type="text/javascript" src="include/js/modernizr-2.6.2.min.js"> -->
+    <script type="text/javascript" src="include/js/modernizr-2.6.2.min.js">
 
 
     </script>
 
 </head>
 <style>
-.navbar-fixed-top {
-  background-color: black;
-  color: white;
+
+body {
+  font: 14px sans-serif;
+}
+h1{
   text-align: center;
+  color: blue;
+}
+u,a
+{
+  color: blue;
 }
 
-.well {
-  margin-top: 100px;
+
+.panel-title{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
 }
+
+.panel{
+  margin-top: 90px;
+}
+
+.top-navbar{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
 text {
   font-size: 14px;
   font-family: sans-serif;
@@ -56,30 +77,42 @@ text {
 
 </style>
 <body>
-  <div class="container-fluid" id="top">
-      <nav class="navbar navbar-fixed-top">
-        <div class="row">
-          <div class="navbar-header col-md-12">
-            <h2>Code Frequency- Additions and Deletions in a week</h2>
+  <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbar1">
 
-          </div><!-- end navbar -->
-        </div><!-- end row -->
-      </nav>
-  </div><!-- end top -->
+                      <ul class="nav navbar-nav navbar-text top-navbar">
+                          <li><a href="./index.html"><u>Contributors</u></a></li>
+              						<li><a href="./commitsGraph.html" ><u>Commits</u></a></li>
+                          <li><a href="./codeFrequencyGraph.html" ><u>Code Frequency</u></a></li>
+                      </ul>
+  			        	</div>
+  			      </div>
+   </nav><!-- end of navbar -->
 
-  <div class="container" id="content">
-      <!-- start .row -->
+  <div class="container">
 
       <div class="row">
-        <!-- start #chart.col-md-12 -->
-          <div class="col-md-12 well" >
-            <div class="yearPagination"></div>
-            <div id="chart"></div>
-          </div>
+
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+              <div class="panel-heading">
+                  <h3 class="panel-title"><b>Code Frequency- Additions and Deletions per week</b>: <u>nodejs/node</u> Repository</h3>
+              </div> <!-- end panel-heading -->
+
+              <div class="panel-body overall">
+                <div class="yearPagination"></div>
+                <div id="chart"></div>
+              </div>
+          </div> <!-- end panel -->
+      </div>
+
+      </div>
+
+      <!-- for Author Graph -->
+  </div> <!-- end of container -->
 
 
-      </div><!-- end .row -->
-  </div>
 <script src="//d3js.org/d3.v3.min.js"></script>
 <!-- <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
 
@@ -96,13 +129,12 @@ text {
 <script type="text/javascript" src="include/js/d3.legend.js"></script>
 <script>
 
+
+// Function to plot the graph
 function plotCodeFrequencyGraph(data) {
   var margin = {top: 20, right: 20, bottom: 100, left: 100},
-      width = 1160 - margin.left - margin.right,
+      width = 1130 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
-  // var xRage = d3.time.scale()
-  // .range([0, width]);
-  //
   var xRage = d3.scale.ordinal()
       .rangeRoundBands([0, width]);
 
@@ -143,14 +175,6 @@ d3.select("#chart").html("");
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-  // $('.well').append()
-  // var yearSelect = $('#yearSelect');
-  // $.each(yearsObj,function(year){
-  //   yearSelect.append($('<option></option>').val(year).html(year));
-  // });
-
     data.map(function(obj) {
       obj["insertions"] = parseFloat(obj["insertions"]);
       obj["deletions"] = parseFloat(obj["deletions"]);
@@ -176,23 +200,15 @@ color.domain(d3.keys(data[0]).filter(function(key) {
       };
     });
 
-    // console.log(browsers);
     y.domain([
       d3.min(browsers, function(c) { return d3.min(c.values, function(v) { return v.y; }); }),
       d3.max(browsers, function(c) { return d3.max(c.values, function(v) { return v.y; }); })
     ]);
 
     var xDom = data.map(function(d) {
-      // console.log(d.weekNum);
       return d.weekNum;
     });
-    //
-    // console.log("XDomain");
-    // console.log(xDom);
     xRage.domain(xDom);
-    //
-    // console.log("X==========");
-    // console.log(xRage("8/2009"));
     var vars = svg.selectAll(".vars")
     .data(browsers)
     .enter().append("g")
@@ -239,12 +255,10 @@ d3.json("outputJsons/codeFrequency.json", function(error, data) {
        maxVisible: 2,
        pageObj: yearsObj
     }).on('page', function(event, num){
-        // alert(yearsObj[num-1]);
         plotCodeFrequencyGraph(data[yearsObj[num-1]]);
         $(".content2").html("Page " + num); // or some ajax content loading...
     });
     plotCodeFrequencyGraph(data[yearsObj[0]]);
-    // data = data["2015"];
 
 
 });
