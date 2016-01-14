@@ -1,0 +1,55 @@
+
+body {
+  font: 14px sans-serif;
+}
+h1{
+  text-align: center;
+  color: blue;
+}
+u,a
+{
+  color: blue;
+}
+
+
+.panel-title{
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.panel{
+  margin-top: 90px;
+}
+
+.top-navbar{
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+text {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+  body {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .legend rect {
+    fill:white;
+    stroke:black;
+    opacity:0.8;}
