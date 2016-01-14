@@ -49,7 +49,7 @@ d3.json("./outputJsons/jsonFileForOverallCommitsForContributorsGraph.json",funct
                        .attr("dx", "-.8em")
                        .attr("dy", "-.5em")
                        .attr("transform", function(d) {
-                           return "rotate(-90)"
+                           return "rotate(-65)"
                            });
 
 
