@@ -1,26 +1,26 @@
 [
 	{
-		"month": "Dec 2009",
+		"month": "Oct 2010",
 		"no_Of_Commits": 3
-	},
-	{
-		"month": "Feb 2010",
-		"no_Of_Commits": 4
-	},
-	{
-		"month": "Mar 2010",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Jun 2010",
-		"no_Of_Commits": 1
 	},
 	{
 		"month": "Aug 2010",
 		"no_Of_Commits": 5
 	},
 	{
-		"month": "Oct 2010",
+		"month": "Jun 2010",
+		"no_Of_Commits": 1
+	},
+	{
+		"month": "Mar 2010",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Feb 2010",
+		"no_Of_Commits": 4
+	},
+	{
+		"month": "Dec 2009",
 		"no_Of_Commits": 3
 	}
 ]

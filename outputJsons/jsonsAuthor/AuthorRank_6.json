@@ -1,26 +1,6 @@
 [
 	{
-		"month": "Feb 2009",
-		"no_Of_Commits": 15
-	},
-	{
-		"month": "Mar 2009",
-		"no_Of_Commits": 34
-	},
-	{
-		"month": "Apr 2009",
-		"no_Of_Commits": 64
-	},
-	{
-		"month": "May 2009",
-		"no_Of_Commits": 114
-	},
-	{
-		"month": "Jun 2009",
-		"no_Of_Commits": 121
-	},
-	{
-		"month": "Jul 2009",
+		"month": "Sep 2009",
 		"no_Of_Commits": 52
 	},
 	{
@@ -28,7 +8,27 @@
 		"no_Of_Commits": 83
 	},
 	{
-		"month": "Sep 2009",
+		"month": "Jul 2009",
 		"no_Of_Commits": 52
+	},
+	{
+		"month": "Jun 2009",
+		"no_Of_Commits": 121
+	},
+	{
+		"month": "May 2009",
+		"no_Of_Commits": 114
+	},
+	{
+		"month": "Apr 2009",
+		"no_Of_Commits": 64
+	},
+	{
+		"month": "Mar 2009",
+		"no_Of_Commits": 34
+	},
+	{
+		"month": "Feb 2009",
+		"no_Of_Commits": 14
 	}
 ]

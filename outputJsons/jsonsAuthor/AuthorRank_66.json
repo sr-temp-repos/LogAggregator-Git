@@ -1,14 +1,10 @@
 [
 	{
-		"month": "Jun 2015",
-		"no_Of_Commits": 2
+		"month": "Dec 2015",
+		"no_Of_Commits": 1
 	},
 	{
-		"month": "Jul 2015",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Aug 2015",
+		"month": "Oct 2015",
 		"no_Of_Commits": 1
 	},
 	{
@@ -16,11 +12,15 @@
 		"no_Of_Commits": 6
 	},
 	{
-		"month": "Oct 2015",
+		"month": "Aug 2015",
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Dec 2015",
-		"no_Of_Commits": 1
+		"month": "Jul 2015",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Jun 2015",
+		"no_Of_Commits": 2
 	}
 ]

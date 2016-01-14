@@ -1,46 +1,46 @@
 [
 	{
-		"month": "Feb 2015",
+		"month": "Dec 2015",
 		"no_Of_Commits": 2
-	},
-	{
-		"month": "Mar 2015",
-		"no_Of_Commits": 8
-	},
-	{
-		"month": "Apr 2015",
-		"no_Of_Commits": 8
-	},
-	{
-		"month": "May 2015",
-		"no_Of_Commits": 5
-	},
-	{
-		"month": "Jun 2015",
-		"no_Of_Commits": 4
-	},
-	{
-		"month": "Jul 2015",
-		"no_Of_Commits": 9
-	},
-	{
-		"month": "Aug 2015",
-		"no_Of_Commits": 10
-	},
-	{
-		"month": "Sep 2015",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Oct 2015",
-		"no_Of_Commits": 5
 	},
 	{
 		"month": "Nov 2015",
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Dec 2015",
+		"month": "Oct 2015",
+		"no_Of_Commits": 5
+	},
+	{
+		"month": "Sep 2015",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Aug 2015",
+		"no_Of_Commits": 10
+	},
+	{
+		"month": "Jul 2015",
+		"no_Of_Commits": 9
+	},
+	{
+		"month": "Jun 2015",
+		"no_Of_Commits": 4
+	},
+	{
+		"month": "May 2015",
+		"no_Of_Commits": 5
+	},
+	{
+		"month": "Apr 2015",
+		"no_Of_Commits": 8
+	},
+	{
+		"month": "Mar 2015",
+		"no_Of_Commits": 8
+	},
+	{
+		"month": "Feb 2015",
 		"no_Of_Commits": 2
 	}
 ]
