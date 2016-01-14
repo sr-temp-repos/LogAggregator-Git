@@ -24,7 +24,7 @@ var tip = d3.tip()
   .attr('class', 'd3-tip')
   .offset([-10, 0])
   .html(function(d) {
-    return "<strong>Mo_Of_Commits:</strong> <span style='color:red'>" + d.no_Of_Commits + "</span>";
+    return "<strong>No_Of_Commits:</strong> <span style='color:red'>" + d.no_Of_Commits + "</span>";
   })
 
 var svg = d3.select(".overall").append("svg")

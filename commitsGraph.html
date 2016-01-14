@@ -95,7 +95,7 @@
 
                       <ul class="nav navbar-nav navbar-text top-navbar">
                           <li><a href="./index.html"><u>Contributors</u></a></li>
-              						<li><a href="./commitsGraph.html" ><u>Commits</u></a></li>
+              						<li class="active"><a href="./commitsGraph.html" ><u>Commits</u></a></li>
                           <li><a href="./codeFrequencyGraph.html" ><u>Code Frequency</u></a></li>
                       </ul>
   			        	</div>
@@ -336,7 +336,7 @@
         .attr("x",function(d){return xScale(d.day);}).attr("y",function(d){return yScale(d.noCommit)-10;}).text(function(d){return d.noCommit;});
 
         function changeLineData()
-        {  
+        {
           d3.select("path.line")
           .transition()
           .delay(100)
