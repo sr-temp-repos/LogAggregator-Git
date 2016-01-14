@@ -49,6 +49,11 @@ text {
     shape-rendering: crispEdges;
   }
 
+  .legend rect {
+    fill:white;
+    stroke:black;
+    opacity:0.8;}
+
 </style>
 <body>
   <div class="container-fluid" id="top">
@@ -82,13 +87,13 @@ text {
 <script src="http://code.jquery.com/jquery.js"></script>
 
 <!-- If no online access, fallback to our hardcoded version of jQuery -->
-<script>window.jQuery || document.write('<script src="includes/js/jquery-1.8.2.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\/script>')</script>
 
 <!-- Bootstrap JS -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
-<script type="text/javascript" src="jquery-bootpag/lib/jquery.bootpag.js"></script>
-
+<script type="text/javascript" src="include/lib/bootpag/lib/jquery.bootpag.js"></script>
+<script type="text/javascript" src="include/js/d3.legend.js"></script>
 <script>
 
 function plotCodeFrequencyGraph(data) {
@@ -114,14 +119,11 @@ function plotCodeFrequencyGraph(data) {
   var yAxis = d3.svg.axis()
   .scale(y)
   .orient("left");
-
+  console.log("=========YAxis========");
+  console.log(yAxis);
 
   var area = d3.svg.area()
   .x(function(d) {
-
-    console.log("d=====");
-    console.log(d);
-
     return xRage(d.date);
   })
   .y0(function(d) {
@@ -149,8 +151,6 @@ d3.select("#chart").html("");
   //   yearSelect.append($('<option></option>').val(year).html(year));
   // });
 
-
-
     data.map(function(obj) {
       obj["insertions"] = parseFloat(obj["insertions"]);
       obj["deletions"] = parseFloat(obj["deletions"]);
@@ -162,6 +162,7 @@ color.domain(d3.keys(data[0]).filter(function(key) {
 
 
     var browsers = color.domain().map(function(name) {
+
       return {
         name: name,
         values: data.map(function(d) {
@@ -202,6 +203,7 @@ color.domain(d3.keys(data[0]).filter(function(key) {
     .attr("d", function(d) {
       return area(d.values);
     })
+    .attr("data-legend",function(d) { return d.name})
     .style("fill", function(d) {
       return color(d.name);
     });
@@ -214,6 +216,12 @@ color.domain(d3.keys(data[0]).filter(function(key) {
     svg.append("g")
     .attr("class", "y axis")
     .call(yAxis);
+
+    legend = svg.append("g")
+  .attr("class","legend")
+  .attr("transform","translate(50,30)")
+  .style("font-size","12px")
+  .call(d3.legend)
 
 
 }
@@ -240,7 +248,6 @@ d3.json("outputJsons/codeFrequency.json", function(error, data) {
 
 
 });
-
 
 </script>
 
