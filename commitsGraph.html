@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>New File</title>
+  <title>Commit Graphs</title>
   <meta charset="utf-8">
+  <link href="./lib/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/style.css" rel="stylesheet">
   <style>
 
   body {
@@ -61,7 +63,9 @@
     position: absolute;
     text-align: center;
   }
-
+  #panel_id{
+    padding-bottom:0px;
+  }
   /* Style northward tooltips differently */
   .d3-tip.n:after {
     margin: -1px 0 0 0;
@@ -79,29 +83,68 @@
     text-align: center;
     overflow:hidden;
   }
+  #sec_panel{
+    margin-top:0px;
+  }
   </style>
 </head>
 <body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+              <div class="container-fluid">
+                  <div class="collapse navbar-collapse" id="navbar1">
 
-  <div class="holder">
-    <h1>Graph PLotting Number of Commits on Weekly and Daily basis</h1>
-    <hr>
-    <select style="float:right" id="year_select">
-      <option>2009</option>
-      <option>2010</option>
-      <option>2011</option>
-      <option>2012</option>
-      <option>2013</option>
-      <option>2014</option>
-      <option>2015</option>
-      <option>2016</option>
-    </select>
-    <p  style="float:right;font-size:20px;margin:0px">
-      Select Year:
-    </p>
-    <div id="svgBar"></div>
-    <div id="svg" style="top:700px"></div>
-  </div>
+                      <ul class="nav navbar-nav navbar-text top-navbar">
+                          <li><a href="./index.html"><u>Contributors</u></a></li>
+              						<li><a href="./commitsGraph.html" ><u>Commits</u></a></li>
+                          <li><a href="./codeFrequencyGraph.html" ><u>Code Frequency</u></a></li>
+                      </ul>
+  			        	</div>
+  			      </div>
+   </nav><!-- end of navbar -->
+
+   <div class="container">
+       <div class="row">
+       <div class="col-sm-12">
+         <div class="panel panel-default" id='panel_id'>
+             <div class="panel-heading">
+                 <h3 class="panel-title">Graph PLotting Number of Commits on Weekly and Daily basis</h3>
+             </div> <!-- end panel-heading -->
+             <div class="panel-body" style="background-color:#fff">
+               <div class="holder">
+                 <select style="float:right;font-size:18px" id="year_select">
+                   <option>2009</option>
+                   <option>2010</option>
+                   <option>2011</option>
+                   <option>2012</option>
+                   <option>2013</option>
+                   <option>2014</option>
+                   <option>2015</option>
+                   <option>2016</option>
+                 </select>
+                 <p  style="float:right;font-size:20px;margin:0px">
+                   Select Year:
+                 </p>
+                 <div id="svgBar"></div>
+                 <div id="svg" style="top:700px"></div>
+               </div>
+             </div>
+         </div> <!-- end panel -->
+
+        <!-- <div class="panel panel-default" id='sec_panel'>
+         <div class="panel-heading">
+             <h3 class="panel-title">Graph PLotting Number of Commits on Weekly and Daily basis</h3>
+         </div>
+         <div class="panel-body" style="background-color:#fff">
+           <div class="holder">
+             <div id="svg" style="top:700px"></div>
+           </div>
+         </div>
+       </div> -->
+
+       </div><!--end of column12-->
+     </div><!--end of row-->
+   </div><!--end of container-->
+
 
 
   <script src="js/d3.min.js"></script>
