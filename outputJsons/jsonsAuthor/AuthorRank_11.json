@@ -1,74 +1,10 @@
 [
 	{
-		"month": "Feb 2011",
+		"month": "Mar 2013",
 		"no_Of_Commits": 2
 	},
 	{
-		"month": "Mar 2011",
-		"no_Of_Commits": 10
-	},
-	{
-		"month": "Apr 2011",
-		"no_Of_Commits": 4
-	},
-	{
-		"month": "May 2011",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Jun 2011",
-		"no_Of_Commits": 4
-	},
-	{
-		"month": "Jul 2011",
-		"no_Of_Commits": 26
-	},
-	{
-		"month": "Aug 2011",
-		"no_Of_Commits": 13
-	},
-	{
-		"month": "Sep 2011",
-		"no_Of_Commits": 15
-	},
-	{
-		"month": "Oct 2011",
-		"no_Of_Commits": 18
-	},
-	{
-		"month": "Nov 2011",
-		"no_Of_Commits": 7
-	},
-	{
-		"month": "Dec 2011",
-		"no_Of_Commits": 10
-	},
-	{
-		"month": "Jan 2012",
-		"no_Of_Commits": 17
-	},
-	{
-		"month": "Feb 2012",
-		"no_Of_Commits": 10
-	},
-	{
-		"month": "Mar 2012",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "May 2012",
-		"no_Of_Commits": 6
-	},
-	{
-		"month": "Jun 2012",
-		"no_Of_Commits": 1
-	},
-	{
-		"month": "Jul 2012",
-		"no_Of_Commits": 1
-	},
-	{
-		"month": "Aug 2012",
+		"month": "Oct 2012",
 		"no_Of_Commits": 1
 	},
 	{
@@ -76,11 +12,75 @@
 		"no_Of_Commits": 3
 	},
 	{
-		"month": "Oct 2012",
+		"month": "Aug 2012",
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Mar 2013",
+		"month": "Jul 2012",
+		"no_Of_Commits": 1
+	},
+	{
+		"month": "Jun 2012",
+		"no_Of_Commits": 1
+	},
+	{
+		"month": "May 2012",
+		"no_Of_Commits": 6
+	},
+	{
+		"month": "Mar 2012",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Feb 2012",
+		"no_Of_Commits": 10
+	},
+	{
+		"month": "Jan 2012",
+		"no_Of_Commits": 17
+	},
+	{
+		"month": "Dec 2011",
+		"no_Of_Commits": 10
+	},
+	{
+		"month": "Nov 2011",
+		"no_Of_Commits": 7
+	},
+	{
+		"month": "Oct 2011",
+		"no_Of_Commits": 18
+	},
+	{
+		"month": "Sep 2011",
+		"no_Of_Commits": 15
+	},
+	{
+		"month": "Aug 2011",
+		"no_Of_Commits": 13
+	},
+	{
+		"month": "Jul 2011",
+		"no_Of_Commits": 26
+	},
+	{
+		"month": "Jun 2011",
+		"no_Of_Commits": 4
+	},
+	{
+		"month": "May 2011",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Apr 2011",
+		"no_Of_Commits": 4
+	},
+	{
+		"month": "Mar 2011",
+		"no_Of_Commits": 10
+	},
+	{
+		"month": "Feb 2011",
 		"no_Of_Commits": 2
 	}
 ]

@@ -1,14 +1,10 @@
 [
 	{
-		"month": "Sep 2010",
+		"month": "Mar 2011",
 		"no_Of_Commits": 2
 	},
 	{
-		"month": "Oct 2010",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Nov 2010",
+		"month": "Jan 2011",
 		"no_Of_Commits": 1
 	},
 	{
@@ -16,11 +12,15 @@
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Jan 2011",
+		"month": "Nov 2010",
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Mar 2011",
+		"month": "Oct 2010",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Sep 2010",
 		"no_Of_Commits": 2
 	}
 ]

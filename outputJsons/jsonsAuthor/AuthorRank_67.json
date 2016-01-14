@@ -1,22 +1,22 @@
 [
 	{
-		"month": "Mar 2011",
+		"month": "Jul 2014",
 		"no_Of_Commits": 2
-	},
-	{
-		"month": "Oct 2012",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Dec 2012",
-		"no_Of_Commits": 5
 	},
 	{
 		"month": "Jan 2013",
 		"no_Of_Commits": 3
 	},
 	{
-		"month": "Jul 2014",
+		"month": "Dec 2012",
+		"no_Of_Commits": 5
+	},
+	{
+		"month": "Oct 2012",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Mar 2011",
 		"no_Of_Commits": 2
 	}
 ]

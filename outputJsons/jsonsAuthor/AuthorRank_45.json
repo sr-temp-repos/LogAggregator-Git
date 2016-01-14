@@ -1,6 +1,22 @@
 [
 	{
-		"month": "Aug 2011",
+		"month": "Oct 2015",
+		"no_Of_Commits": 1
+	},
+	{
+		"month": "Sep 2015",
+		"no_Of_Commits": 7
+	},
+	{
+		"month": "Aug 2015",
+		"no_Of_Commits": 11
+	},
+	{
+		"month": "Jun 2012",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Feb 2012",
 		"no_Of_Commits": 1
 	},
 	{
@@ -8,23 +24,7 @@
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Feb 2012",
-		"no_Of_Commits": 1
-	},
-	{
-		"month": "Jun 2012",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Aug 2015",
-		"no_Of_Commits": 11
-	},
-	{
-		"month": "Sep 2015",
-		"no_Of_Commits": 7
-	},
-	{
-		"month": "Oct 2015",
+		"month": "Aug 2011",
 		"no_Of_Commits": 1
 	}
 ]

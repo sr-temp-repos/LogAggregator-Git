@@ -1,54 +1,6 @@
 [
 	{
-		"month": "Sep 2009",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Oct 2009",
-		"no_Of_Commits": 9
-	},
-	{
-		"month": "Nov 2009",
-		"no_Of_Commits": 13
-	},
-	{
-		"month": "Dec 2009",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Jan 2010",
-		"no_Of_Commits": 15
-	},
-	{
-		"month": "Feb 2010",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Mar 2010",
-		"no_Of_Commits": 16
-	},
-	{
-		"month": "Apr 2010",
-		"no_Of_Commits": 7
-	},
-	{
-		"month": "May 2010",
-		"no_Of_Commits": 7
-	},
-	{
-		"month": "Jun 2010",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Aug 2010",
-		"no_Of_Commits": 2
-	},
-	{
-		"month": "Sep 2010",
-		"no_Of_Commits": 3
-	},
-	{
-		"month": "Oct 2010",
+		"month": "Apr 2013",
 		"no_Of_Commits": 1
 	},
 	{
@@ -56,7 +8,55 @@
 		"no_Of_Commits": 1
 	},
 	{
-		"month": "Apr 2013",
+		"month": "Oct 2010",
 		"no_Of_Commits": 1
+	},
+	{
+		"month": "Sep 2010",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Aug 2010",
+		"no_Of_Commits": 2
+	},
+	{
+		"month": "Jun 2010",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "May 2010",
+		"no_Of_Commits": 7
+	},
+	{
+		"month": "Apr 2010",
+		"no_Of_Commits": 7
+	},
+	{
+		"month": "Mar 2010",
+		"no_Of_Commits": 16
+	},
+	{
+		"month": "Feb 2010",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Jan 2010",
+		"no_Of_Commits": 15
+	},
+	{
+		"month": "Dec 2009",
+		"no_Of_Commits": 3
+	},
+	{
+		"month": "Nov 2009",
+		"no_Of_Commits": 13
+	},
+	{
+		"month": "Oct 2009",
+		"no_Of_Commits": 9
+	},
+	{
+		"month": "Sep 2009",
+		"no_Of_Commits": 2
 	}
 ]
