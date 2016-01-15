@@ -25,7 +25,7 @@ function d3DataGen (paramWeekWiseObj) {
   }
   return transformedArray;
 }
-var masterGitLogJson= require("../data/gitLogsMaster.json");
+var masterGitLogJson= require("./outputJsons/gitLogsMaster.json");
 var weekWiseStatsObj = {};
 masterGitLogJson.map(function(gitLogObj){
   var currObjDate;
@@ -65,7 +65,7 @@ console.log(weekWiseStatsObj);
 weekWiseStatsObj = d3DataGen(weekWiseStatsObj);
 
 fs = require('fs');
-fs.writeFile('../data/codeFrequency.json', JSON.stringify(weekWiseStatsObj), function (err) {
+fs.writeFile('outputJsons/codeFrequency.json', JSON.stringify(weekWiseStatsObj), function (err) {
   if (err) return console.log(err);
   console.log("Data has been written in the file");
 });

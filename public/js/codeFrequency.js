@@ -113,7 +113,7 @@ color.domain(d3.keys(data[0]).filter(function(key) {
 }
 
 var codeFreqGraphJsonData = {};
-d3.json("../../outputJsons/codeFrequency.json", function(error, data) {
+d3.json("../../data/codeFrequency.json", function(error, data) {
   codeFreqGraphJsonData = data;
 
     var yearsObj = Object.keys(data);
