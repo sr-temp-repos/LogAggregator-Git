@@ -9,34 +9,64 @@ This script converts the raw git log data into structured json file -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- bootstrap CSS -->
-    <link rel="stylesheet" href="./public/lib/bootstrap/css/bootstrap.min.css">
-
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <!-- Include Modernizr in the head, before any other Javascript -->
     <!-- <script type="text/javascript" src="include/js/modernizr-2.6.2.min.js"></script> -->
-
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="public/css/codeFrequency.css">
-
+x
 </head>
 
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-              <div class="container-fluid">
-                  <div class="collapse navbar-collapse" id="navbar1">
+  <!-- start #main.container -->
+    <div class="container-fluid" id="main">
+      <!-- start .navbar navbar-fixed-top -->
+      <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="navbar-header col-md-3">
+                <a href="#" class="navbar-brand">
+                  Log <strong>Aggregator</strong>
+                </a>
 
-                      <ul class="nav navbar-nav navbar-text top-navbar">
-                          <li><a href="./index.html"><u>Contributors</u></a></li>
-              						<li><a href="./commitsGraph.html" ><u>Commits</u></a></li>
-                          <li class="active"><a href="./codeFrequencyGraph.html" ><u>Code Frequency</u></a></li>
-                      </ul>
-  			        	</div>
-  			      </div>
-   </nav><!-- end of navbar -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+                  <span class="glyphicon glyphicon-chevron-down">
+                  </span>
+                </button>
+              </div>
+            <div class="collapse navbar-collapse navbar-responsive-collapse visible-sm-*" id="nav" >
+              <!-- start #search.navbar-form navbar-left -->
+              <div class="menu col-md-6" >
+                  <ul class="nav navbar-nav ">
+                    <li>
+                      <a href="#">Contributers</a>
+                    </li>
+
+                    <li>
+                      <a href="#">Commits</a>
+                    </li>
+
+                    <li>
+                      <a href="#">Code Frequency</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </nav><!-- end .navbar navbar-fixed-top -->
 
   <div class="container">
 
       <div class="row">
 
-      <div class="col-sm-12">
+      <div class="<col />-sm-12">
           <div class="panel panel-default">
               <div class="panel-heading">
                   <h3 class="panel-title"><b>Code Frequency- Additions and Deletions per week</b>: <u>nodejs/node</u> Repository</h3>
@@ -52,23 +82,24 @@ This script converts the raw git log data into structured json file -->
       </div>
 
       <!-- for Author Graph -->
+
+
+
+      <script src="//d3js.org/d3.v3.min.js"></script>
+      <!-- <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+
+      <!-- First try for the online version of jQuery-->
+      <script src="http://code.jquery.com/jquery.js"></script>
+
+      <!-- If no online access, fallback to our hardcoded version of jQuery -->
+      <script>window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\/script>')</script>
+
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="./public/lib/bootpag/lib/jquery.bootpag.js"></script>
+      <script type="text/javascript" src="./public/lib/d3.legend.js"></script>
+      <script type="text/javascript" src="public/js/codeFrequency.js"></script>
+
   </div> <!-- end of container -->
-
-
-<script src="//d3js.org/d3.v3.min.js"></script>
-<!-- <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
-
-<!-- First try for the online version of jQuery-->
-<script src="http://code.jquery.com/jquery.js"></script>
-
-<!-- If no online access, fallback to our hardcoded version of jQuery -->
-<script>window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\/script>')</script>
-
-<!-- Bootstrap JS -->
-<script src="./public/lib/bootstrap/js/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="./public/lib/bootpag/lib/jquery.bootpag.js"></script>
-<script type="text/javascript" src="./public/lib/d3.legend.js"></script>
-<script type="text/javascript" src="public/js/codeFrequency.js"></script>
 
 </body>
