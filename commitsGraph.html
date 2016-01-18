@@ -1,367 +1,197 @@
 <!DOCTYPE html>
-<html>
 <head>
-  <title>Commit Graphs</title>
-  <meta charset="utf-8">
-  <link href="./lib/bootstrap.min.css" rel="stylesheet">
-  <link href="./css/style.css" rel="stylesheet">
-  <style>
+    <meta charset="utf-8">
+    <title>Code Frequency Chart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  body {
-    font: 10px sans-serif;
-  }
+    <!-- bootstrap CSS -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!-- Include Modernizr in the head, before any other Javascript -->
+    <!-- <script type="text/javascript" src="include/js/modernizr-2.6.2.min.js"></script> -->
+    <link href='https://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="public/css/style.css">
+    <style>
 
-  .axis path {
-    fill: none;
-  }
-  .axis line {
-    fill: none;
-    stroke: #eee;
-    shape-rendering: crispEdges;
-  }
+    body {
+      font: 10px sans-serif;
+    }
 
-  .axis {
-    fill: #aaa;
-    font-size: 10px;
-  }
+    .axis path {
+      fill: none;
+    }
+    .axis line {
+      fill: none;
+      stroke: #eee;
+      shape-rendering: crispEdges;
+    }
 
-  .line{
-    fill: none;
-    stroke: #1db34f;
-    stroke-width: 2px;
-  }
+    .axis {
+      fill: #aaa;
+      font-size: 10px;
+    }
 
-  .domain path {
-    fill:none;
-    stroke:none;
-  }
-  .bar {
-    fill: #f17f49;
-  }
+    .line{
+      fill: none;
+      stroke: #1db34f;
+      stroke-width: 2px;
+    }
 
-  .colorStyle{
-    fill: #bd380f ;
-  }
-  .d3-tip {
-    line-height: 1;
-    font-weight: bold;
-    padding: 12px;
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    border-radius: 2px;
-  }
+    .domain path {
+      fill:none;
+      stroke:none;
+    }
+    .bar {
+      fill: #f17f49;
+    }
 
-  /* Creates a small triangle extender for the tooltip */
-  .d3-tip:after {
-    box-sizing: border-box;
-    display: inline;
-    font-size: 10px;
-    width: 100%;
-    line-height: 1;
-    color: rgba(0, 0, 0, 0.8);
-    content: "\25BC";
-    position: absolute;
-    text-align: center;
-  }
-  #panel_id{
-    padding-bottom:0px;
-  }
-  /* Style northward tooltips differently */
-  .d3-tip.n:after {
-    margin: -1px 0 0 0;
-    top: 100%;
-    left: 0;
-  }
+    .colorStyle{
+      fill: #bd380f ;
+    }
+    .d3-tip {
+      line-height: 1;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+    }
 
-  #svgBar,#svg{
-    margin: auto;
-    overflow:hidden;
-    clear:both;
-  }
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      content: "\25BC";
+      position: absolute;
+      text-align: center;
+    }
+    #panel_id{
+      padding-bottom:0px;
+    }
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
 
-  .holder{
-    text-align: center;
-    overflow:hidden;
-  }
-  #sec_panel{
-    margin-top:0px;
-  }
-  </style>
+    #svgBar,#svg{
+      margin: auto;
+      overflow:hidden;
+      clear:both;
+    }
+
+    .holder{
+      text-align: center;
+      overflow:hidden;
+    }
+    #sec_panel{
+      margin-top:0px;
+    }
+    </style>
+
 </head>
+
 <body>
-  <nav class="navbar navbar-default navbar-fixed-top">
-              <div class="container-fluid">
-                  <div class="collapse navbar-collapse" id="navbar1">
+  <!-- start #main.container -->
+    <div class="container-fluid" id="main">
+      <!-- start .navbar navbar-fixed-top -->
+      <nav class="navbar navbar-fixed-top">
+        <div class="container-fluid">
+          <div class="row">
+              <div class="navbar-header col-md-3">
+                <a href="#" class="navbar-brand">
+                  Log <strong>Aggregator</strong>
+                </a>
 
-                      <ul class="nav navbar-nav navbar-text top-navbar">
-                          <li><a href="./index.html"><u>Contributors</u></a></li>
-              						<li class="active"><a href="./commitsGraph.html" ><u>Commits</u></a></li>
-                          <li><a href="./codeFrequencyGraph.html" ><u>Code Frequency</u></a></li>
-                      </ul>
-  			        	</div>
-  			      </div>
-   </nav><!-- end of navbar -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav" aria-expanded="false">
+                  <span class="glyphicon glyphicon-chevron-down">
+                  </span>
+                </button>
+              </div>
+            <div class="collapse navbar-collapse navbar-responsive-collapse visible-sm-*" id="nav" >
+              <!-- start #search.navbar-form navbar-left -->
+              <div class="menu col-md-6" >
+                  <ul class="nav navbar-nav ">
+                    <li>
+                      <a href="index.html">Contributers</a>
+                    </li>
 
-   <div class="container">
-       <div class="row">
-       <div class="col-sm-12">
-         <div class="panel panel-default" id='panel_id'>
-             <div class="panel-heading">
-                 <h3 class="panel-title">Graph PLotting Number of Commits on Weekly and Daily basis</h3>
-             </div> <!-- end panel-heading -->
-             <div class="panel-body" style="background-color:#fff">
-               <div class="holder">
-                 <select style="float:right;font-size:18px" id="year_select">
-                   <option>2009</option>
-                   <option>2010</option>
-                   <option>2011</option>
-                   <option>2012</option>
-                   <option>2013</option>
-                   <option>2014</option>
-                   <option>2015</option>
-                   <option>2016</option>
-                 </select>
-                 <p  style="float:right;font-size:20px;margin:0px">
-                   Select Year:
-                 </p>
-                 <div id="svgBar"></div>
-                 <div id="svg" style="top:700px"></div>
-               </div>
-             </div>
-         </div> <!-- end panel -->
+                    <li>
+                      <a href="commitsgraph.html">Commits</a>
+                    </li>
 
-
-       </div><!--end of column12-->
-     </div><!--end of row-->
-   </div><!--end of container-->
+                    <li>
+                      <a href="codeFrequencyGraph.html">Code Frequency</a>
+                    </li>
+                  </ul>
+                </div>
+            </div>
+          </div>
 
 
 
-  <script src="js/d3.min.js"></script>
-  <script src="js/d3.tip.v0.6.3.js"></script>
-  <script src="js/jquery-1.11.3.min.js"></script>
+        </div>
+      </nav><!-- end .navbar navbar-fixed-top -->
 
-  <script>
+  <div class="container">
 
+      <div class="row">
 
-  (function(){
-    console.log("this will be called when the document is ready");
-    plot_the_graph();
-  })();
+      <div class="<col />-sm-12">
+      <div class="panel panel-default" id='panel_id'>
+          <div class="panel-heading">
+              <h3 class="panel-title">Graph PLotting Number of Commits on Weekly and Daily basis</h3>
+          </div> <!-- end panel-heading -->
+          <div class="panel-body" style="background-color:#fff">
+            <div class="holder">
+              <select style="float:right;font-size:18px" id="year_select">
+                <option>2009</option>
+                <option>2010</option>
+                <option>2011</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+              </select>
+              <p  style="float:right;font-size:20px;margin:0px">
+                Select Year:
+              </p>
+              <div id="svgBar"></div>
+              <div id="svg" style="top:700px"></div>
+            </div>
+          </div>
+      </div> <!-- end panel -->
+      </div>
 
-  $('#year_select').on('change',function(){
-    console.log("this is called when the button is clicked");
-    plot_the_graph();
-  });
+      </div>
 
-  function plot_the_graph()
-  {
-    Array.prototype.myFind = function(obj) {
-      return this.filter(function(item) {
-        for (var prop in obj)
-        if (!(prop in item) || obj[prop] !== item[prop])
-        return false;
-        return true;
-      });
-    };
-    $('svg').remove();
-    var margin = {top: 40, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom;
+      <!-- First try for the online version of jQuery-->
+      <!-- <script src="http://code.jquery.com/jquery.js"></script>
+      <script src="//d3js.org/d3.v3.min.js"></script> -->
+      <script src="lib/d3.min.js"></script>
+      <script src="lib/d3.tip.v0.6.3.js"></script>
+      <script src="lib/jquery-1.11.3.min.js"></script>
+      <!-- If no online access, fallback to our hardcoded version of jQuery -->
+      <!-- <script>window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\/script>')</script> -->
+      <!-- for Commit Graph -->
 
-    var dayData={};
+      <script src="./public/js/commit_graph.js"></script>
 
-    var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+      <!-- <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="./public/lib/bootpag/lib/jquery.bootpag.js"></script>
+      <script type="text/javascript" src="./public/lib/d3.legend.js"></script>
+      <!-- <script type="text/javascript" src="public/js/codeFrequency.js"></script> -->
 
-    var y = d3.scale.linear()
-    .range([height, 0]);
+  </div> <!-- end of container -->
 
-    var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .ticks(10);
-
-    var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .innerTickSize(-width);
-
-    var tip = d3.tip()
-    .attr('class', 'd3-tip')
-    .offset([-10, 0])
-    .html(function(d) {
-      return "<strong>No of Commits:</strong> <span style='color:red'>" + d.noCommits + "</span>";
-    })
-
-    var svgBar = d3.select("#svgBar").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    svgBar.call(tip);
-
-    d3.json("inputLogs/commitsJson.json", function(error, data) {
-
-
-      var str=$('#year_select option:selected').text();
-      data = data.myFind({year:parseInt(str)});
-      dayData=data[data.length-1].dailyCommitList;
-      weekNo=data[data.length-1].weekNo;
-      x.domain(data.map(function(d) { return d.weekNo; }));
-      y.domain([0, d3.max(data, function(d) { return d.noCommits; })]);
-
-      svgBar.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-      .append("text")
-      .attr("x", 850)
-      .attr("y",20)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Week Number");
-
-      svgBar.append("g")
-      .attr("class", "axis")
-      .call(yAxis)
-      .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", -16)
-      .attr("dy", "-.71em")
-      .style("text-anchor", "end")
-      .text("Weekly No of Commits");
-
-      var lastBar=  svgBar.selectAll(".bar")
-      .data(data)
-      .enter().append("rect")
-      .attr("class", "bar")
-      .attr("x", function(d) { return x(d.weekNo); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.noCommits); })
-      .attr("height", function(d) { return height - y(d.noCommits); })
-      .on('mouseover', tip.show)
-      .on('mouseout', tip.hide)
-      .on("click", function(d){
-        d3.selectAll('.bar').style("fill", "#f17f49");
-        d3.select(this).style("fill", "#bd380f");
-        dayData=d.dailyCommitList;
-        changeLineData();
-        d3.select("circle.y")
-        .transition()
-        .delay(100)
-        .attr("transform","translate(" + (x(d.weekNo) +7)+ "," +235+ ")");
-      });
-
-      d3.select(lastBar[0][lastBar[0].length-1])
-      .style("fill", "#bd380f");
-
-      // append the circle at the intersection
-      svgBar.append("circle")
-      .attr("class", "y")
-      .style("fill", "#bd380f")
-      .attr("r", 2)
-      .attr("transform","translate(" + (x(weekNo) +7)+ "," +235+ ")");
-
-
-        var weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-        var xScale = d3.scale.ordinal()
-        .domain(weekdays)
-        .rangePoints([0, width]);
-
-        var ymax = ((30>d3.max(dayData,function(d){return d.noCommit}))?30:(d3.max(dayData,function(d){return d.noCommit;})));
-        console.log(ymax);
-        var yScale = d3.scale.linear()
-        .domain([0, ymax])
-        .range([height, 0]);
-
-        var axisX = d3.svg.axis()
-        .scale(xScale)
-        .orient("bottom")
-        .tickPadding(10);
-
-        var axisY = d3.svg.axis()
-        .scale(yScale)
-        .orient("left")
-        .innerTickSize(-width)
-        .tickPadding(10);
-
-        var line = d3.svg.line()
-        .x(function(d) {return xScale(d.day); })
-        .y(function(d) { return yScale(d.noCommit); });
-
-        var svg = d3.select("#svg").append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .attr("align","center")
-        .append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-        .attr("align","center");
-
-        svg.append("g")
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(axisX)
-        .append("text")
-        .attr("x", 850)
-        .attr("y",22)
-        .attr("dy", ".71em")
-        .style("text-anchor", "end")
-        .text("Day");
-
-        svg.append("g")
-        .attr("class", "y axis")
-        .call(axisY)
-        .append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 6)
-        .attr("dy",-36)
-        .style("text-anchor", "end")
-        .text("Day wise Number of Commits");
-
-        var path= svg.append("path")
-        .attr("class", "line")
-        .attr("d", line(dayData));
-
-        var cir = svg.selectAll('circle').data(dayData).enter().append('g');
-        cir.append("circle")
-        .attr('cx',function(d){return xScale(d.day);})
-        .attr('cy',function(d){return yScale(d.noCommit);})
-        .attr('r',4)
-        .attr('fill','#1db34f')
-        .style("stroke", "green");
-        cir.append('text')
-        .attr("class","text_disp")
-        .attr("x",function(d){return xScale(d.day);}).attr("y",function(d){return yScale(d.noCommit)-10;}).text(function(d){return d.noCommit;});
-
-        function changeLineData()
-        {
-          d3.select("path.line")
-          .transition()
-          .delay(100)
-          .attr("d", line(dayData));
-
-          var cir = svg.selectAll('circle').data(dayData);
-          cir.transition().delay(200)
-          .attr('cx',function(d){return xScale(d.day);})
-          .attr('cy',function(d){return yScale(d.noCommit);})
-          .attr('r',4)
-          .attr('fill','#1db34f');
-
-          svg.selectAll('.text_disp').data(dayData)
-          .transition().delay(200)
-          .attr("x",function(d){return xScale(d.day);})
-          .attr("y",function(d){return yScale(d.noCommit)-10;})
-          .text(function(d){return d.noCommit;});
-        }
-
-
-
-
-    });
-
-  }
-  </script>
 </body>
-</html>

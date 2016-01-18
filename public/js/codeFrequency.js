@@ -2,9 +2,9 @@
 
 // Function to plot the graph
 function plotCodeFrequencyGraph(data) {
-  var margin = {top: 20, right: 20, bottom: 100, left: 100},
+  var margin = {top: 20, right: 20, bottom: 40, left: 100},
       width = 1130 - margin.left - margin.right,
-      height = 500 - margin.top - margin.bottom;
+      height = 450 - margin.top - margin.bottom;
   var xRage = d3.scale.ordinal()
       .rangeRoundBands([0, width]);
 
@@ -20,7 +20,8 @@ function plotCodeFrequencyGraph(data) {
 
   var yAxis = d3.svg.axis()
   .scale(y)
-  .orient("left");
+  .orient("left")
+  .innerTickSize(-width);
 
   var area = d3.svg.area()
   .x(function(d) {
@@ -74,6 +75,15 @@ color.domain(d3.keys(data[0]).filter(function(key) {
       d3.max(browsers, function(c) { return d3.max(c.values, function(v) { return v.y; }); })
     ]);
 
+    svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", "translate(0," + height + ")")
+    .call(xAxis);
+
+    svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis);
+
     var xDom = data.map(function(d) {
       return d.weekNum;
     });
@@ -93,14 +103,7 @@ color.domain(d3.keys(data[0]).filter(function(key) {
       return color(d.name);
     });
 
-    svg.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + height + ")")
-    .call(xAxis);
 
-    svg.append("g")
-    .attr("class", "y axis")
-    .call(yAxis);
 
     legend = svg.append("g")
   .attr("class","legend")

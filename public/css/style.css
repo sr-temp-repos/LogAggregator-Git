@@ -18,12 +18,12 @@ h1{
 }
 
 .panel{
-  margin-top: 90px;
+  margin-top: 70px;
 }
 .panel-default>.panel-heading {
     color: white;
     background-color: #b56969;
-    font-family: 'Raleway', sans-serif;  
+    font-family: 'Raleway', sans-serif;
 }
 
 .menu {
@@ -74,8 +74,22 @@ h1{
   font-family: sans-serif;
 }
 
+.axis path {
+  fill: none;
+}
+.axis line {
+  fill: none;
+  stroke: #eee;
+  shape-rendering: crispEdges;
+}
 
-  .axis path,
+.axis {
+  fill: #aaa;
+  font-size: 10px;
+}
+
+
+  /*.axis path,
   .axis line {
     fill: none;
     stroke: #000;
@@ -86,7 +100,7 @@ h1{
     fill: none;
     stroke: #000;
     shape-rendering: crispEdges;
-  }
+  }*/
 
   .legend rect {
     fill:white;
