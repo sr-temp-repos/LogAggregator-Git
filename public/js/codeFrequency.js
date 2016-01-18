@@ -21,8 +21,6 @@ function plotCodeFrequencyGraph(data) {
   var yAxis = d3.svg.axis()
   .scale(y)
   .orient("left");
-  console.log("=========YAxis========");
-  console.log(yAxis);
 
   var area = d3.svg.area()
   .x(function(d) {
@@ -70,6 +68,7 @@ color.domain(d3.keys(data[0]).filter(function(key) {
       };
     });
 
+    console.log(browsers);
     y.domain([
       d3.min(browsers, function(c) { return d3.min(c.values, function(v) { return v.y; }); }),
       d3.max(browsers, function(c) { return d3.max(c.values, function(v) { return v.y; }); })
@@ -116,9 +115,7 @@ var codeFreqGraphJsonData = {};
 d3.json("../../data/codeFrequency.json", function(error, data) {
   codeFreqGraphJsonData = data;
 
-    var yearsObj = Object.keys(data);
-    console.log("___Years___");
-    console.log(yearsObj);
+    var yearsObj = Object.keys(data).sort(function(a, b){return b-a});
     $('.yearPagination').bootpag({
        total: yearsObj.length ,
        page: 1,

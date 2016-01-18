@@ -51,7 +51,6 @@
         $owner.data('settings', settings);
 
         function renderPage($bootpag, page) {
-            console.log("RENDER PAGE");
             page = parseInt(page, 10);
             var lp,
                 maxV = settings.maxVisible == 0 ? 1 : settings.maxVisible,
@@ -164,7 +163,6 @@
             $bootpag = me.find('ul.bootpag');
 
             me.find('li').click(function paginationClick() {
-                console.log("++++CLIECKED");
                 var me = $(this);
                 if (me.hasClass(settings.disabledClass) || me.hasClass(settings.activeClass)) {
                     return;

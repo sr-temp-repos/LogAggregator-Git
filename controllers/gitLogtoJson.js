@@ -17,7 +17,7 @@ function compare(leftElement,rightElement)  {
 function gitLogFileProcessor() {
     var gitLogsMasterJson = [];
     var startUnitFlag = 0; //Flag to set for start of unit
-    var fileName = "inputLogs/gitLogFile";
+    var fileName = "../data/gitLogFile";
     var unitIndex = 0; //Index for gitLogsMasterJson array
 
     /*Split file into lines*/
@@ -77,9 +77,10 @@ function gitLogFileProcessor() {
         }
     });
     // gitLogsMasterJson.sort(compare);
-    console.log(JSON.stringify(gitLogsMasterJson, null, '\t'));
+    // console.log(JSON.stringify(gitLogsMasterJson, null, '\t'));
+    console.log(gitLogsMasterJson.length);
     /*Writing the array of objects to JSON*/
-    fs.writeFile('outputJsons/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
+    fs.writeFile('../data/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
       if(err)
         throw err;
       console.log("Json file is created successfully");

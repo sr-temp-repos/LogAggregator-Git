@@ -17,7 +17,7 @@ Date.prototype.getWeek = function () {
     var dayNr   = (this.getDay() + 6) % 7;
 
     // ISO 8601 states that week 1 is the week
-    // with the first thursday of that year.
+    // xwith the first thursday of that year.
     // Set the target date to the thursday in the target week
     target.setDate(target.getDate() - dayNr + 3);
 
@@ -102,7 +102,7 @@ console.log(weekWiseStatsObj);
 weekWiseStatsObj = d3DataGen(weekWiseStatsObj);
 
 
-fs.writeFile('../data/codeFrequency.json', JSON.stringify(weekWiseStatsObj), function (err) {
+fs.writeFile('../data/codeFrequency.json', JSON.stringify(weekWiseStatsObj, null, '\t'), function (err) {
   if (err) return console.log(err);
   console.log("Data has been written in the file");
 });
