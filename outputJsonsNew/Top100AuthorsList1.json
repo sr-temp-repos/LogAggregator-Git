@@ -1,0 +1,402 @@
+[
+	{
+		"AuthorName": "Ryan Dahl ",
+		"noOfCommits": 2406
+	},
+	{
+		"AuthorName": "Ben Noordhuis ",
+		"noOfCommits": 1711
+	},
+	{
+		"AuthorName": "isaacs ",
+		"noOfCommits": 1511
+	},
+	{
+		"AuthorName": "Fedor Indutny ",
+		"noOfCommits": 680
+	},
+	{
+		"AuthorName": "Bert Belder ",
+		"noOfCommits": 584
+	},
+	{
+		"AuthorName": "Ryan ",
+		"noOfCommits": 535
+	},
+	{
+		"AuthorName": "Trevor Norris ",
+		"noOfCommits": 298
+	},
+	{
+		"AuthorName": "Timothy J Fontaine ",
+		"noOfCommits": 268
+	},
+	{
+		"AuthorName": "Rod Vagg ",
+		"noOfCommits": 236
+	},
+	{
+		"AuthorName": "Nathan Rajlich ",
+		"noOfCommits": 195
+	},
+	{
+		"AuthorName": "koichik ",
+		"noOfCommits": 156
+	},
+	{
+		"AuthorName": "Rich Trott ",
+		"noOfCommits": 150
+	},
+	{
+		"AuthorName": "Shigeki Ohtsu ",
+		"noOfCommits": 131
+	},
+	{
+		"AuthorName": "Brian White ",
+		"noOfCommits": 97
+	},
+	{
+		"AuthorName": "Igor Zinkovsky ",
+		"noOfCommits": 95
+	},
+	{
+		"AuthorName": "cjihrig ",
+		"noOfCommits": 94
+	},
+	{
+		"AuthorName": "Felix Geisendörfer ",
+		"noOfCommits": 86
+	},
+	{
+		"AuthorName": "Alexis Campailla ",
+		"noOfCommits": 65
+	},
+	{
+		"AuthorName": "Sakthipriyan Vairamani ",
+		"noOfCommits": 58
+	},
+	{
+		"AuthorName": "Maciej Małecki ",
+		"noOfCommits": 58
+	},
+	{
+		"AuthorName": "Jeremiah Senkpiel ",
+		"noOfCommits": 56
+	},
+	{
+		"AuthorName": "Andreas Madsen ",
+		"noOfCommits": 56
+	},
+	{
+		"AuthorName": "Johan Bergström ",
+		"noOfCommits": 56
+	},
+	{
+		"AuthorName": "Sam Roberts ",
+		"noOfCommits": 55
+	},
+	{
+		"AuthorName": "James M Snell ",
+		"noOfCommits": 54
+	},
+	{
+		"AuthorName": "Evan Lucas ",
+		"noOfCommits": 53
+	},
+	{
+		"AuthorName": "Roman Reiss ",
+		"noOfCommits": 48
+	},
+	{
+		"AuthorName": "Micheil Smith ",
+		"noOfCommits": 45
+	},
+	{
+		"AuthorName": "Vladimir Kurchatkin ",
+		"noOfCommits": 43
+	},
+	{
+		"AuthorName": "Julien Gilli ",
+		"noOfCommits": 41
+	},
+	{
+		"AuthorName": "Felix Geisendörfer ",
+		"noOfCommits": 38
+	},
+	{
+		"AuthorName": "Chris Dickinson ",
+		"noOfCommits": 38
+	},
+	{
+		"AuthorName": "Brendan Ashworth ",
+		"noOfCommits": 37
+	},
+	{
+		"AuthorName": "Tristian Flanagan ",
+		"noOfCommits": 36
+	},
+	{
+		"AuthorName": "Tom Hughes ",
+		"noOfCommits": 35
+	},
+	{
+		"AuthorName": "Jackson Tian ",
+		"noOfCommits": 34
+	},
+	{
+		"AuthorName": "Michaël Zasso ",
+		"noOfCommits": 32
+	},
+	{
+		"AuthorName": "Herbert Vojčík ",
+		"noOfCommits": 30
+	},
+	{
+		"AuthorName": "Mikeal Rogers ",
+		"noOfCommits": 28
+	},
+	{
+		"AuthorName": "Saúl Ibarra Corretgé ",
+		"noOfCommits": 28
+	},
+	{
+		"AuthorName": "Yazhong Liu ",
+		"noOfCommits": 27
+	},
+	{
+		"AuthorName": "Ali Ijaz Sheikh ",
+		"noOfCommits": 25
+	},
+	{
+		"AuthorName": "Yosuke Furukawa ",
+		"noOfCommits": 25
+	},
+	{
+		"AuthorName": "Henry Rawas ",
+		"noOfCommits": 24
+	},
+	{
+		"AuthorName": "Karl Skomski ",
+		"noOfCommits": 24
+	},
+	{
+		"AuthorName": "Paul Querna ",
+		"noOfCommits": 24
+	},
+	{
+		"AuthorName": "Peter Griess ",
+		"noOfCommits": 23
+	},
+	{
+		"AuthorName": "Forrest L Norvell ",
+		"noOfCommits": 23
+	},
+	{
+		"AuthorName": "Tim Caswell ",
+		"noOfCommits": 22
+	},
+	{
+		"AuthorName": "Kyle Robinson Young ",
+		"noOfCommits": 22
+	},
+	{
+		"AuthorName": "Matt Ranney ",
+		"noOfCommits": 21
+	},
+	{
+		"AuthorName": "Dave Pacheco ",
+		"noOfCommits": 20
+	},
+	{
+		"AuthorName": "Mathias Bynens ",
+		"noOfCommits": 19
+	},
+	{
+		"AuthorName": "Jérémy Lal ",
+		"noOfCommits": 19
+	},
+	{
+		"AuthorName": "Rasmus Andersson ",
+		"noOfCommits": 18
+	},
+	{
+		"AuthorName": "Alex Kocharin ",
+		"noOfCommits": 18
+	},
+	{
+		"AuthorName": "Steven R. Loomis ",
+		"noOfCommits": 17
+	},
+	{
+		"AuthorName": "Ryan Graham ",
+		"noOfCommits": 17
+	},
+	{
+		"AuthorName": "Scott Blomquist ",
+		"noOfCommits": 17
+	},
+	{
+		"AuthorName": "João Reis ",
+		"noOfCommits": 16
+	},
+	{
+		"AuthorName": "Ryunosuke SATO ",
+		"noOfCommits": 16
+	},
+	{
+		"AuthorName": "Trent Mick ",
+		"noOfCommits": 16
+	},
+	{
+		"AuthorName": "Santiago Gimeno ",
+		"noOfCommits": 15
+	},
+	{
+		"AuthorName": "Peter Bright ",
+		"noOfCommits": 15
+	},
+	{
+		"AuthorName": "Stefan Budeanu ",
+		"noOfCommits": 14
+	},
+	{
+		"AuthorName": "Kat Marchán ",
+		"noOfCommits": 14
+	},
+	{
+		"AuthorName": "Dean McNamee ",
+		"noOfCommits": 14
+	},
+	{
+		"AuthorName": "Jonas Pfenniger ",
+		"noOfCommits": 13
+	},
+	{
+		"AuthorName": "Domenic Denicola ",
+		"noOfCommits": 12
+	},
+	{
+		"AuthorName": "Calvin Metcalf ",
+		"noOfCommits": 12
+	},
+	{
+		"AuthorName": "Rhys Jones ",
+		"noOfCommits": 12
+	},
+	{
+		"AuthorName": "Rebecca Turner ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "ssuda ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "Zachary Scott ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "Jeroen Janssen ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "Michael Dawson ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "Miroslav Bajtoš ",
+		"noOfCommits": 11
+	},
+	{
+		"AuthorName": "Urban Hafner ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Wyatt Preul ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Jorge Chamorro Bieling ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Minwoo Jung ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Oleg Efimov ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Nikolai Vavilov ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "Roman Klauke ",
+		"noOfCommits": 10
+	},
+	{
+		"AuthorName": "seebees ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Matt Loring ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Jonas Westerlund ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Robert Mustacchi ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Refael Ackermann ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Robert Kowalski ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "yangguo@chromium.org ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Benjamin Thomas ",
+		"noOfCommits": 9
+	},
+	{
+		"AuthorName": "Marco Rogers ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Myles Borins ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Tj Holowaychuk ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Christian Tellnes ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Gil Pedersen ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Marcel Laverdet ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Tim-Smart ",
+		"noOfCommits": 8
+	},
+	{
+		"AuthorName": "Vanilla Hsu ",
+		"noOfCommits": 8
+	}
+]
