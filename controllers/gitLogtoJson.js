@@ -80,7 +80,7 @@ function gitLogFileProcessor() {
     // console.log(JSON.stringify(gitLogsMasterJson, null, '\t'));
     console.log(gitLogsMasterJson.length);
     /*Writing the array of objects to JSON*/
-    fs.writeFile('../data/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
+    fs.writeFile('/data/gitLogsMaster.json', JSON.stringify(gitLogsMasterJson, null, '\t'), function(err){
       if(err)
         throw err;
       console.log("Json file is created successfully");
