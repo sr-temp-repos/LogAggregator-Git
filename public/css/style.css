@@ -20,6 +20,115 @@ h1{
 .panel{
   margin-top: 70px;
 }
+
+body {
+  font: 14px sans-serif;
+}
+
+h1{
+  text-align: center;
+  color: blue;
+}
+
+
+
+
+.panel-title {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.panel{
+  margin-top: 70px;
+}
+.panel-default>.panel-heading {
+    color: white;
+    background-color: #b56969;
+    font-family: 'Raleway', sans-serif;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.closeWrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar {
+  background-color: rgba(107,170,151,.87);
+  color: white;
+
+}
+
+.nav a{
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  opacity: .7;
+}
+
+.navbar ul a:hover{
+  background: none;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+
+.navbar ul a:focus{
+  background: none;
+  text-decoration: underline;
+  opacity: 1;
+}
+
+.navbar-header a{
+  font-size: 32px;
+  font-family: 'Poiret One', cursive;
+  color:white;
+}
+
+
+.panel {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+.axis path {
+  fill: none;
+}
+.axis line {
+  fill: none;
+  stroke: #eee;
+  shape-rendering: crispEdges;
+}
+
+.axis {
+  fill: #aaa;
+  font-size: 10px;
+}
+
+
+  /*.axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+
+  .x.axis path {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }*/
+
+  .legend rect {
+    fill:white;
+    stroke:black;
+    opacity:0.8;}
+
 .panel-default>.panel-heading {
     color: white;
     background-color: #b56969;

@@ -1,0 +1,482 @@
+[
+	{
+		"month": 0,
+		"year": 2016,
+		"noOfCommits": 11
+	},
+	{
+		"month": 11,
+		"year": 2015,
+		"noOfCommits": 167
+	},
+	{
+		"month": 10,
+		"year": 2015,
+		"noOfCommits": 187
+	},
+	{
+		"month": 9,
+		"year": 2015,
+		"noOfCommits": 189
+	},
+	{
+		"month": 8,
+		"year": 2015,
+		"noOfCommits": 177
+	},
+	{
+		"month": 7,
+		"year": 2015,
+		"noOfCommits": 185
+	},
+	{
+		"month": 6,
+		"year": 2015,
+		"noOfCommits": 113
+	},
+	{
+		"month": 5,
+		"year": 2015,
+		"noOfCommits": 154
+	},
+	{
+		"month": 4,
+		"year": 2015,
+		"noOfCommits": 168
+	},
+	{
+		"month": 3,
+		"year": 2015,
+		"noOfCommits": 155
+	},
+	{
+		"month": 2,
+		"year": 2015,
+		"noOfCommits": 209
+	},
+	{
+		"month": 1,
+		"year": 2015,
+		"noOfCommits": 201
+	},
+	{
+		"month": 0,
+		"year": 2015,
+		"noOfCommits": 319
+	},
+	{
+		"month": 11,
+		"year": 2014,
+		"noOfCommits": 120
+	},
+	{
+		"month": 10,
+		"year": 2014,
+		"noOfCommits": 82
+	},
+	{
+		"month": 9,
+		"year": 2014,
+		"noOfCommits": 98
+	},
+	{
+		"month": 8,
+		"year": 2014,
+		"noOfCommits": 77
+	},
+	{
+		"month": 7,
+		"year": 2014,
+		"noOfCommits": 79
+	},
+	{
+		"month": 6,
+		"year": 2014,
+		"noOfCommits": 72
+	},
+	{
+		"month": 5,
+		"year": 2014,
+		"noOfCommits": 52
+	},
+	{
+		"month": 4,
+		"year": 2014,
+		"noOfCommits": 80
+	},
+	{
+		"month": 3,
+		"year": 2014,
+		"noOfCommits": 52
+	},
+	{
+		"month": 2,
+		"year": 2014,
+		"noOfCommits": 73
+	},
+	{
+		"month": 1,
+		"year": 2014,
+		"noOfCommits": 107
+	},
+	{
+		"month": 0,
+		"year": 2014,
+		"noOfCommits": 132
+	},
+	{
+		"month": 11,
+		"year": 2013,
+		"noOfCommits": 93
+	},
+	{
+		"month": 10,
+		"year": 2013,
+		"noOfCommits": 98
+	},
+	{
+		"month": 9,
+		"year": 2013,
+		"noOfCommits": 107
+	},
+	{
+		"month": 8,
+		"year": 2013,
+		"noOfCommits": 75
+	},
+	{
+		"month": 7,
+		"year": 2013,
+		"noOfCommits": 208
+	},
+	{
+		"month": 6,
+		"year": 2013,
+		"noOfCommits": 165
+	},
+	{
+		"month": 5,
+		"year": 2013,
+		"noOfCommits": 106
+	},
+	{
+		"month": 4,
+		"year": 2013,
+		"noOfCommits": 146
+	},
+	{
+		"month": 3,
+		"year": 2013,
+		"noOfCommits": 164
+	},
+	{
+		"month": 2,
+		"year": 2013,
+		"noOfCommits": 274
+	},
+	{
+		"month": 1,
+		"year": 2013,
+		"noOfCommits": 209
+	},
+	{
+		"month": 0,
+		"year": 2013,
+		"noOfCommits": 201
+	},
+	{
+		"month": 11,
+		"year": 2012,
+		"noOfCommits": 161
+	},
+	{
+		"month": 10,
+		"year": 2012,
+		"noOfCommits": 66
+	},
+	{
+		"month": 9,
+		"year": 2012,
+		"noOfCommits": 161
+	},
+	{
+		"month": 8,
+		"year": 2012,
+		"noOfCommits": 136
+	},
+	{
+		"month": 7,
+		"year": 2012,
+		"noOfCommits": 188
+	},
+	{
+		"month": 6,
+		"year": 2012,
+		"noOfCommits": 170
+	},
+	{
+		"month": 5,
+		"year": 2012,
+		"noOfCommits": 276
+	},
+	{
+		"month": 4,
+		"year": 2012,
+		"noOfCommits": 178
+	},
+	{
+		"month": 3,
+		"year": 2012,
+		"noOfCommits": 188
+	},
+	{
+		"month": 2,
+		"year": 2012,
+		"noOfCommits": 246
+	},
+	{
+		"month": 1,
+		"year": 2012,
+		"noOfCommits": 303
+	},
+	{
+		"month": 0,
+		"year": 2012,
+		"noOfCommits": 201
+	},
+	{
+		"month": 11,
+		"year": 2011,
+		"noOfCommits": 251
+	},
+	{
+		"month": 10,
+		"year": 2011,
+		"noOfCommits": 236
+	},
+	{
+		"month": 9,
+		"year": 2011,
+		"noOfCommits": 242
+	},
+	{
+		"month": 8,
+		"year": 2011,
+		"noOfCommits": 265
+	},
+	{
+		"month": 7,
+		"year": 2011,
+		"noOfCommits": 306
+	},
+	{
+		"month": 6,
+		"year": 2011,
+		"noOfCommits": 243
+	},
+	{
+		"month": 5,
+		"year": 2011,
+		"noOfCommits": 95
+	},
+	{
+		"month": 4,
+		"year": 2011,
+		"noOfCommits": 76
+	},
+	{
+		"month": 3,
+		"year": 2011,
+		"noOfCommits": 70
+	},
+	{
+		"month": 2,
+		"year": 2011,
+		"noOfCommits": 114
+	},
+	{
+		"month": 1,
+		"year": 2011,
+		"noOfCommits": 159
+	},
+	{
+		"month": 0,
+		"year": 2011,
+		"noOfCommits": 229
+	},
+	{
+		"month": 11,
+		"year": 2010,
+		"noOfCommits": 188
+	},
+	{
+		"month": 10,
+		"year": 2010,
+		"noOfCommits": 265
+	},
+	{
+		"month": 9,
+		"year": 2010,
+		"noOfCommits": 179
+	},
+	{
+		"month": 8,
+		"year": 2010,
+		"noOfCommits": 137
+	},
+	{
+		"month": 7,
+		"year": 2010,
+		"noOfCommits": 130
+	},
+	{
+		"month": 6,
+		"year": 2010,
+		"noOfCommits": 130
+	},
+	{
+		"month": 5,
+		"year": 2010,
+		"noOfCommits": 129
+	},
+	{
+		"month": 4,
+		"year": 2010,
+		"noOfCommits": 145
+	},
+	{
+		"month": 3,
+		"year": 2010,
+		"noOfCommits": 179
+	},
+	{
+		"month": 2,
+		"year": 2010,
+		"noOfCommits": 202
+	},
+	{
+		"month": 1,
+		"year": 2010,
+		"noOfCommits": 137
+	},
+	{
+		"month": 0,
+		"year": 2010,
+		"noOfCommits": 104
+	},
+	{
+		"month": 11,
+		"year": 2009,
+		"noOfCommits": 95
+	},
+	{
+		"month": 10,
+		"year": 2009,
+		"noOfCommits": 76
+	},
+	{
+		"month": 9,
+		"year": 2009,
+		"noOfCommits": 109
+	},
+	{
+		"month": 8,
+		"year": 2009,
+		"noOfCommits": 133
+	},
+	{
+		"month": 7,
+		"year": 2009,
+		"noOfCommits": 85
+	},
+	{
+		"month": 6,
+		"year": 2009,
+		"noOfCommits": 52
+	},
+	{
+		"month": 5,
+		"year": 2009,
+		"noOfCommits": 132
+	},
+	{
+		"month": 4,
+		"year": 2009,
+		"noOfCommits": 114
+	},
+	{
+		"month": 3,
+		"year": 2009,
+		"noOfCommits": 64
+	},
+	{
+		"month": 2,
+		"year": 2009,
+		"noOfCommits": 34
+	},
+	{
+		"month": 1,
+		"year": 2009,
+		"noOfCommits": 15
+	},
+	{
+		"month": 0,
+		"year": 2009,
+		"noOfCommits": 0
+	},
+	{
+		"month": 1,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 2,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 3,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 4,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 5,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 6,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 7,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 8,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 9,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 10,
+		"year": 2016,
+		"noOfCommits": 0
+	},
+	{
+		"month": 11,
+		"year": 2016,
+		"noOfCommits": 0
+	}
+]
