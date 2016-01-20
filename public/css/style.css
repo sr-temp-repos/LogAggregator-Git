@@ -1,3 +1,11 @@
+u,a {
+  color: blue;
+}
+
+
+.area {
+  fill: #5c6170;
+}
 
 body {
   font: 14px sans-serif;
@@ -41,11 +49,6 @@ h1{
 
 .panel{
   margin-top: 70px;
-}
-.panel-default>.panel-heading {
-    color: white;
-    background-color: #b56969;
-    font-family: 'Raleway', sans-serif;
 }
 
 .menu {
