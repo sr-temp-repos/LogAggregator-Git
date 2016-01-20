@@ -1,0 +1,17 @@
+.containeer-fluid#main
+  nav(class="navbar navbar-fixed-top")
+    .container-fluid
+      .row
+        .navbar-header.col-md-3
+          a.navbar-brand(href="/#") Log <strong>Aggregator</strong>
+          button(type="button", class="navbar-toggle collapsed", data-toggle="collapse",data-target="#nav", aria-expanded="false")
+            span(class="glyphicon  glyphicon-chevron-down")
+        div#nav.collapse.navbar-collapse.navbar-responsive-collapse.visible-sm-12
+          .menu.col-md-6
+            ul.nav.navbar-nav
+              li
+                a(href="index.html") Contributers
+              li
+                a(href="commitsGraph") Commits
+              li
+                a(href="codeFrequencyGraph") Code Frequency
