@@ -13,11 +13,16 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var codeFrequencyData = require('./routes/codeFrequencyData');
+console.log("code Frequency ");
+console.log(codeFrequencyData);
+var codeFrequencyGraph = require('./routes/codeFrequencyGraph');
+
 
 var app = express();
-console.log("Dir name");
-console.log(__dirname);// /vagrant/nodeExpressJade-->Path to this folder from the root
-console.log(path.join(__dirname, 'views'));// It just appends views after the root path and generates a string like this: /vagrant/nodeExpressJade/views
+// console.log("Dir name");
+// console.log(__dirname);// /vagrant/nodeExpressJade-->Path to this folder from the root
+// console.log(path.join(__dirname, 'views'));// It just appends views after the root path and generates a string like this: /vagrant/nodeExpressJade/views
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));// It tells the app where the views folder lies
@@ -43,14 +48,18 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-console.log("___Static");
-console.log(typeof express.static(path.join(__dirname, 'public')));
+// console.log("___Static");
+// console.log(typeof express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use(function(req,res,next) {
+//   console.log("Got req for" + req.url);
+//
+// });
 
 app.use('/', routes);
 app.use('/users', users);
-app.use('/static', express.static('public'));
-
+app.use('/codeFrequencyGraph',codeFrequencyGraph);
+app.use('/codeFrequencyData', codeFrequencyData);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -59,7 +68,6 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
