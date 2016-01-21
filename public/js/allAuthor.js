@@ -123,7 +123,7 @@ function plot_author_graph()
   for(var i=0;i<100;i++)
   {
     // loads the jsons for each author to plot for Authors  data
-    var fileToBeLoaded = "../data/jsonsAuthor/AuthorRank_" + (i+1) + ".json";//fileToBeLoaded: variable to load the files
+    var fileToBeLoaded = "/jsonsAuthor/AuthorRank_" + (i+1) + ".json";//fileToBeLoaded: variable to load the files
     // searches for the class named author for svg selection
     var className =".author"+(i+1);//className: variable to search for class name
     plot_graph(fileToBeLoaded,className);

@@ -8,7 +8,7 @@
   function getAuthor(nor,divClassName) {
 
 $.ajax({
-  url: "../data/Top100AuthorsList.json",
+  url: "/Top100AuthorsList.json",
   dataType: 'json',
   async: false,
   success: function(jd) {

@@ -51,6 +51,7 @@ app.use(cookieParser());
 // console.log("___Static");
 // console.log(typeof express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'data')));
 // app.use(function(req,res,next) {
 //   console.log("Got req for" + req.url);
 //

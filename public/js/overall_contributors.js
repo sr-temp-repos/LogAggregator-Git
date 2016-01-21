@@ -42,7 +42,7 @@ function year_wise_plot(){
           .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
 
 
-  d3.json("./data/jsonFileForOverallCommitsForContributorsGraph.json",function(error, data) {
+  d3.json("/jsonFileForOverallCommitsForContributorsGraph.json",function(error, data) {
     if (error) throw error;
 
     var str = $('#year_select option:selected').text();
