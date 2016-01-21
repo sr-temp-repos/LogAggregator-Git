@@ -14,10 +14,12 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var codeFrequencyData = require('./routes/codeFrequencyData');
+var commitsData = require('./routes/commitsData');
 console.log("code Frequency ");
-console.log(codeFrequencyData);
+//console.log(codeFrequencyData);
 var codeFrequencyGraph = require('./routes/codeFrequencyGraph');
-
+var commitsGraph = require('./routes/commitsGraph');
+//console.log(commitsData);
 
 var app = express();
 // console.log("Dir name");
@@ -56,11 +58,16 @@ app.use(express.static(path.join(__dirname, 'data')));
 //   console.log("Got req for" + req.url);
 //
 // });
-
-app.use('/', routes);
-app.use('/users', users);
+app.use('/commitsData', commitsData);
+app.use('/commitsGraph',commitsGraph);
 app.use('/codeFrequencyGraph',codeFrequencyGraph);
 app.use('/codeFrequencyData', codeFrequencyData);
+app.use('/', routes);
+app.use('/users', users);
+//app.use('commits',);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

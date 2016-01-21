@@ -1,0 +1,23 @@
+extends layout
+  
+block content
+  div.container
+    div.row
+      div.col-sm-12
+        div.panel.panel-default#panel_id
+          div.panel-heading
+            h3.panel-title Graph PLotting Number of Commits on Weekly and Daily basis
+          div.panel-body
+            div.holder
+              div#year_det_sel
+                span Select Year:
+                select#year_select
+              div#svgBar
+              div#svg      
+  script(src="http://d3js.org/d3.v3.min.js")
+  script(src="/lib/d3.tip.v0.6.3.js")
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+  script(src="/javascripts/commit_graph.js")
+  script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")            
+  script(src="/lib/bootpag/lib/jquery.bootpag.js")
+  script(src="/lib/d3.legend.js")
