@@ -5,9 +5,9 @@
 // function to plot the graph using d3js
 function plot_graph(fileToBeLoaded,className){
 
-var margin = {top: 40, right: 20, bottom: 60, left: 30},
-    width = 450;
-    height = 200;
+var margin = {top: 20, right: 20, bottom: 20, left: 20},
+    width = 400;
+    height = 150;
 
 var x = d3.scale.linear()
     .range([0, width], .1);
