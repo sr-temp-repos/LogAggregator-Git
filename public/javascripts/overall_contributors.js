@@ -1,4 +1,28 @@
-//created By Aayush Aditya
+(function(){
+  console.log("this will be called when the document is ready");
+     $.get("/overallContributorsData", function(jsonData) {
+        jsonData.sort(function(a,b){ //sorting the data to find the min and maximum year.
+          console.log('condition');
+          if(a.year > b.year) return -1;
+          else if(a.year < b.year) return 1;
+          return 0;
+        });
+        var max_year = jsonData[0].year;
+        var min_year = jsonData[jsonData.length-1].year;
+        console.log(jsonData +"min"+ min_year +"max" + max_year);
+        for(var i=min_year;i<=max_year;i++)
+        {
+          $('#year_select').append($('<option>', {
+            value: i,
+            text: i
+          }));
+        }
+      }, "json")
+      console.log("done...!!");
+})();
+
+
+
 
 $('#year_select').on('change',function(){
 year_wise_plot();

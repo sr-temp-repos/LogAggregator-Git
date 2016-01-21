@@ -15,11 +15,10 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var codeFrequencyData = require('./routes/codeFrequencyData');
 var commitsData = require('./routes/commitsData');
-console.log("code Frequency ");
-//console.log(codeFrequencyData);
+var overallContributorsData = require('./routes/overallContributorsData');
 var codeFrequencyGraph = require('./routes/codeFrequencyGraph');
 var commitsGraph = require('./routes/commitsGraph');
-//console.log(commitsData);
+
 
 var app = express();
 // console.log("Dir name");
@@ -62,6 +61,7 @@ app.use('/commitsData', commitsData);
 app.use('/commitsGraph',commitsGraph);
 app.use('/codeFrequencyGraph',codeFrequencyGraph);
 app.use('/codeFrequencyData', codeFrequencyData);
+app.use('/overallContributorsData',overallContributorsData);
 app.use('/', routes);
 app.use('/users', users);
 //app.use('commits',);
