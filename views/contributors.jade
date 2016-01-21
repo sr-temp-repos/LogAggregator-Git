@@ -1,73 +1,38 @@
-doctype html
-html
-  head
-    // Website Title & Description for Search Engine purposes
-    title
-    meta(charset='utf-8')
-    // Mobile viewport optimized
-    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js')
-    // Bootstrap CSS
-    // <link href="./lib/bootstrap.min.css" rel="stylesheet">
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css', integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7', crossorigin='anonymous')
-    link(href='/stylesheets/style.css', rel='stylesheet')
-    link(href='https://fonts.googleapis.com/css?family=Poiret+One', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet', type='text/css')
-    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
-  body
-    script(src='http://d3js.org/d3.v3.min.js')
-    script(src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js')
-    #main.container-fluid
-      // start .navbar navbar-fixed-top
-      nav.navbar.navbar-fixed-top
-        .container-fluid
-          .row
-            .navbar-header.col-md-3
-              a.navbar-brand(href='#')
-                | Log
-                strong Aggregator
-              button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#nav', aria-expanded='false')
-                span.glyphicon.glyphicon-chevron-down
-            #nav.collapse.navbar-collapse.navbar-responsive-collapse.visible-sm-12
-              // start #search.navbar-form navbar-left
-              .menu.col-md-6
-                ul.nav.navbar-nav
-                  li
-                    a(href='contributorsGraph.html') Contributers
-                  li
-                    a(href='commitsGraph.html') Commits
-                  li
-                    a(href='codeFrequencyGraph.html') Code Frequency
-      // end .navbar navbar-fixed-top
-    .container
-      .row
-        .col-sm-12
-          .panel.panel-default
-            .panel-heading
-              h3.panel-title
-                b Plot Of Contributors Graph
-                | :
-                u nodejs/node
-                |  Repository
-            // end panel-heading
-            .panel-body.overall
-              .year_det
-              select#year_select.pull-right
-                option 2009
-                option 2010
-                option 2011
-                option 2012
-                option 2013
-                option 2014
-                option 2015
-                option 2016
-            a.btn.btn-warning.btn-block(href='#', target='_blank') Contributions to master, excluding merge commits (per Month Data)
-          // end panel
-          br
-          h1
-            b Top 100 Authors Commits Graph
-      // for Author Graph
-    // end of container
-    script(src='/javascripts/panelsUsingJQuery.js')
-    script(src='/javascripts/overall_contributors.js')
-    script(src='/javascripts/allAuthor.js')
+extends layout
+
+block content
+  .container
+    .row
+      .col-sm-12
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title
+              b Plot Of Contributors Graph
+              | :
+              u nodejs/node
+              |  Repository
+          // end panel-heading
+          .panel-body.overall
+            .year_det
+            select#year_select.pull-right
+              option 2009
+              option 2010
+              option 2011
+              option 2012
+              option 2013
+              option 2014
+              option 2015
+              option 2016
+          a.btn.btn-warning.btn-block(href='#', target='_blank') Contributions to master, excluding merge commits (per Month Data)
+        // end panel
+        br
+        h1
+          b Top 100 Authors Commits Graph
+    // for Author Graph
+  // end of container
+  script(src='//d3js.org/d3.v3.min.js')
+  script(src='http://code.jquery.com/jquery.js')
+  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS', crossorigin='anonymous')
+  script(src='/javascripts/panelsUsingJQuery.js')
+  script(src='/javascripts/overall_contributors.js')
+  script(src='/javascripts/allAuthor.js')
