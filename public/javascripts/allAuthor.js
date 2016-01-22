@@ -61,8 +61,7 @@ d3.json(fileToBeLoaded,function(error, data) {
     {return 1;}
     return 0;
   });
-  console.log(str);
-  console.log(data)
+
   x.domain([0, d3.max(data,function(d) { return d.month; })]);
   y.domain([0, d3.max(data, function(d) { return d.noOfCommits; })]);
 
@@ -103,13 +102,20 @@ d3.json(fileToBeLoaded,function(error, data) {
 //   return d;
 // }
 };
+var numOfAuthors = [];
 
-
-
+$.ajax({
+  url: "/Top100AuthorsList.json",
+  dataType: 'json',
+  async: false,
+  success: function(jsonData) {
+numOfAuthors=jsonData;
+  }
+});
 //looping for reading all the 100 files
 function plot_author_graph()
 {
-  for(var i=0;i<100;i++)
+  for(var i = 0; i < (numOfAuthors.length) ; i++)
   {
     // loads the jsons for each author to plot for Authors  data
     var fileToBeLoaded = "/AuthorsGraphData/" + (i+1);//fileToBeLoaded: variable to load the files
