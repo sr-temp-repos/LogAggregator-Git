@@ -6,8 +6,4 @@ router.get('/', function(req, res) {
   res.render('contributors', { title: 'Contributors Graph' } );
 });
 
-router.get('/contributors', function(req, res) {
-  res.render('contributors', { title: 'Contributors Graph' } );
-});
-
 module.exports = router;
