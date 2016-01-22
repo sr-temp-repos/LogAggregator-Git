@@ -66,47 +66,36 @@ d3.json(fileToBeLoaded,function(error, data) {
   x.domain([0, d3.max(data,function(d) { return d.month; })]);
   y.domain([0, d3.max(data, function(d) { return d.noOfCommits; })]);
 
+
+    svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis)
+        .selectAll("text")
+                         .style("text-anchor", "end")
+                         .attr("dx", "-.8em")
+                         .attr("dy", "-.5em")
+                         .attr("transform", function(d) {
+                             return "rotate(-75)"
+                             });
+
+
+
+
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+      .append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", -30)
+        .attr("dy", ".71em")
+        .style("text-anchor", "end")
+        .text("Number Of Commits");
+
   svg.append("path")
       .datum(data)
       .attr("class", "area")
       .attr("d", area);
-
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-      .selectAll("text")
-                       .style("text-anchor", "end")
-                       .attr("dx", "-.8em")
-                       .attr("dy", "-.5em")
-                       .attr("transform", function(d) {
-                           return "rotate(-75)"
-                           });
-
-
-
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", -30)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Number Of Commits");
-
-  // svg.selectAll(".bar")
-  //     .data(data)
-  //   .enter().append("rect")
-  //     .attr("class", "bar")
-  //     .attr("x", function(d) { return x(d.month); })
-  //     .attr("width", x.rangeBand())
-  //     .attr("y", function(d) { return y(d.no_Of_Commits); })
-  //     .attr("height", function(d) { return height - y(d.no_Of_Commits); })
-  //     .on('mouseover', tip.show)
-  //     .on('mouseout', tip.hide)
 
 });
 // function type(d) {

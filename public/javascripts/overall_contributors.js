@@ -83,10 +83,6 @@ function year_wise_plot(){
     xScale.domain([0,d3.max(data, function(d) { return d.month;})]);
     yScale.domain([0, d3.max(data, function(d) { return d.noOfCommits; })]);
     //console.log(xScale(9) +":"+ yScale(120));
-    svg.append("path")
-        .datum(data)
-        .attr("class", "area")
-        .attr("d", area);
 
     svg.append("g")
         .attr("class", "x axis")
@@ -102,6 +98,13 @@ function year_wise_plot(){
         .attr("dy", ".71em")
         .style("text-anchor", "end")
         .text("Number Of Commits");
+        
+    svg.append("path")
+        .datum(data)
+        .attr("class", "area")
+        .attr("d", area);
+
+
   });
 }
 

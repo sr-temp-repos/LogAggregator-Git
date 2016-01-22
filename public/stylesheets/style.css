@@ -4,7 +4,7 @@ u,a {
 
 
 .area {
-  fill: #800000;
+  fill: #8080ff;
 }
 
 body {
@@ -254,7 +254,7 @@ h1{
 }
 .axis line {
   fill: none;
-  stroke: #eee;
+  stroke: #b3b3ff;
   shape-rendering: crispEdges;
 }
 
