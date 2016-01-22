@@ -15,10 +15,13 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var codeFrequencyData = require('./routes/codeFrequencyData');
 var commitsData = require('./routes/commitsData');
-var overallContributorsData = require('./routes/overallContributorsData');
+//var contributorsData = require('./routes/contributorsData');
+console.log("code Frequency ");
+//console.log(codeFrequencyData);
 var codeFrequencyGraph = require('./routes/codeFrequencyGraph');
 var commitsGraph = require('./routes/commitsGraph');
-
+var contributorsGraph = require('./routes/contributorsGraph');
+//console.log(commitsData);
 
 var app = express();
 // console.log("Dir name");
@@ -57,11 +60,14 @@ app.use(express.static(path.join(__dirname, 'data')));
 //   console.log("Got req for" + req.url);
 //
 // });
+app.use('/contributorsGraph',contributorsGraph);
+app.use('/contributorsOverallGraphData',contributorsGraph);
+app.use('/AuthorsGraphData',contributorsGraph);
+
 app.use('/commitsData', commitsData);
 app.use('/commitsGraph',commitsGraph);
 app.use('/codeFrequencyGraph',codeFrequencyGraph);
 app.use('/codeFrequencyData', codeFrequencyData);
-app.use('/overallContributorsData',overallContributorsData);
 app.use('/', routes);
 app.use('/users', users);
 //app.use('commits',);

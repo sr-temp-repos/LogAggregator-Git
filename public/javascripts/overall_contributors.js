@@ -1,6 +1,8 @@
+//created By Aayush Aditya and Arul
+
 (function(){
   console.log("this will be called when the document is ready");
-     $.get("/overallContributorsData", function(jsonData) {
+     $.get("/contributorsOverallGraphData/cd", function(jsonData) {
         jsonData.sort(function(a,b){ //sorting the data to find the min and maximum year.
           console.log('condition');
           if(a.year > b.year) return -1;
@@ -17,12 +19,10 @@
             text: i
           }));
         }
+        year_wise_plot();
       }, "json")
       console.log("done...!!");
 })();
-
-
-
 
 $('#year_select').on('change',function(){
 year_wise_plot();
@@ -66,7 +66,7 @@ function year_wise_plot(){
           .attr("transform", "translate(" + margin1.left + "," + margin1.top + ")");
 
 
-  d3.json("/jsonFileForOverallCommitsForContributorsGraph.json",function(error, data) {
+  d3.json("/contributorsOverallGraphData/cd",function(error, data) {
     if (error) throw error;
 
     var str = $('#year_select option:selected').text();
