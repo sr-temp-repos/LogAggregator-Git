@@ -129,7 +129,10 @@ function plotCodeFrequencyGraph(data) {
 }
 
 (function(){
-  $.get("/codeFrequencyData", function(jsonData) {
+  $.get("/codeFrequencyData", function(data) {
+    var jsonData = data;
+    console.log(jsonData["2015"].length);
+    console.log(jsonData["2016"].length);
     passDataToPlotGraph(jsonData);
 }, "json")
 .done(function() {
@@ -142,10 +145,13 @@ function plotCodeFrequencyGraph(data) {
 })();
 
 function passDataToPlotGraph(codeFreqGraphJsonData) {
-
-  var years = Object.keys(codeFreqGraphJsonData).sort(function(a, b) {
-      return b - a
-  });
+  console.log("Code Freq GrapJson Data");
+  //console.log(codeFreqGraphJsonData);
+  //plotCodeFrequencyGraph(codeFreqGraphJsonData);
+  var years = Object.keys(codeFreqGraphJsonData);//.sort(function(a, b) {
+    //  return a - b
+  //});
+  console.log(codeFreqGraphJsonData.length);
   var yearsObj = [];
   years.map(function(year) {
       if (codeFreqGraphJsonData[year].length > 2) {
@@ -161,6 +167,8 @@ function passDataToPlotGraph(codeFreqGraphJsonData) {
       plotCodeFrequencyGraph(codeFreqGraphJsonData[yearsObj[num - 1]]);
       $(".content2").html("Page " + num); // or some ajax content loading...
   });
+  console.log(years);
+  console.log(codeFreqGraphJsonData[yearsObj[0]]);
   plotCodeFrequencyGraph(codeFreqGraphJsonData[yearsObj[0]]);
 
 }

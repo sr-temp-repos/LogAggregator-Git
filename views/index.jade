@@ -1,0 +1,27 @@
+extends layout
+
+block content    
+  .container
+    .row
+      .col-sm-12
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title
+              <b>Code Frequency- Additions and Deletions per week</b>: <u>nodejs/node</u> Repository
+          .panel-body.overall
+            .yearPagination(style="float:right")
+            #chart
+    
+    script(src='//d3js.org/d3.v3.min.js')
+    script(src='http://code.jquery.com/jquery.js')
+    // If no online access, fallback to our hardcoded version of jQuery
+    //- script.
+    //-   window.jQuery || document.write('<script src="include/js/jquery-1.8.2.min.js"><\\/script>')
+    // Latest compiled and minified JavaScript
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js', integrity='sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS', crossorigin='anonymous')
+    script(type='text/javascript', src='/lib/bootpag/lib/jquery.bootpag.js')
+    script(type='text/javascript', src='/lib/d3.legend.js')
+    script(type='text/javascript', src='/javascripts/codeFrequency.js')
+    
+                    
+                

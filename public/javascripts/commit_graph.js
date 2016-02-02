@@ -1,6 +1,7 @@
 (function(){
   console.log("this will be called when the document is ready");
-     $.get("/commitsdata", function(jsonData) {
+     $.get("/commitsData", function(jsonData) {
+       console.log(jsonData);
         jsonData.sort(function(a,b){                                //sorting the data to find the min and maximum year.
           if(a.year > b.year) return -1;
           else if(a.year < b.year) return 1;
@@ -30,6 +31,7 @@
 $('#year_select').on('change',function(){
   console.log("this is called when the button is clicked");
   $.get("/commitsData", function(jsonData) {
+    console.log(jsonData);
      plot_the_graph(jsonData);
    }, "json")
    .done(function() {
@@ -43,6 +45,7 @@ $('#year_select').on('change',function(){
 
 function plot_the_graph(data)
 {
+  console.log(data);
   Array.prototype.myFind = function(obj) {
     return this.filter(function(item) {
       for (var prop in obj)

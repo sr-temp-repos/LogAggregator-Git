@@ -1,74 +1,45 @@
 var express = require('express');
-var path = require('path');//path - is a core Node module for working with and handling paths.
-var favicon = require('serve-favicon');//serve-favicon is Express middleware for serving a favicon
-var logger = require('morgan'); //morgan is Express middleware for logging requests and responses.
-var cookieParser = require('cookie-parser');//cookie-parser is Express middleware that helps you with handling cookies. Your request object will have a cookies object which you can acces use in your app
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-//http://code.runnable.com/U0sU598vXio2uD-1/example-reading-form-input-with-express-4-0-and-body-parser-for-node-js
-/*
- * body-parser is a piece of express middleware that
- *   reads a form's input and stores it as a javascript
- *   object accessible through `req.body`
- */
 
+//requiring the route files
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var codeFrequencyData = require('./routes/codeFrequencyData');
 var commitsData = require('./routes/commitsData');
-//var contributorsData = require('./routes/contributorsData');
-console.log("code Frequency ");
-//console.log(codeFrequencyData);
 var codeFrequencyGraph = require('./routes/codeFrequencyGraph');
 var commitsGraph = require('./routes/commitsGraph');
 var contributorsGraph = require('./routes/contributorsGraph');
-//console.log(commitsData);
 
 var app = express();
-// console.log("Dir name");
-// console.log(__dirname);// /vagrant/nodeExpressJade-->Path to this folder from the root
-// console.log(path.join(__dirname, 'views'));// It just appends views after the root path and generates a string like this: /vagrant/nodeExpressJade/views
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));// It tells the app where the views folder lies
-app.set('view engine', 'jade');// It directs the app to use jade templating engine
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-
-/*This method tells the app to use the parameters you're giving it.
- This can be a function or a path and a function.
-The capabilities are beyond the scope of this blog post.
-*/
-
-
-/*logger('dev') logs the requests to the console as seen above.
-The dev parameter means it will log a lot of information about the request such as the method,
-status code and response time.*/
 app.use(logger('dev'));
-
-/*bodyParser.json() gives your app the ability to parse JSON.
-This is necessary for when you're sending data (which you probably will with a JavaScript application) in JSON format.*/
 app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'data')));
 
+//rounting to the coresponding route file
 app.use('/contributorsGraph',contributorsGraph);
 app.use('/contributorsOverallGraphData',contributorsGraph);
 app.use('/AuthorsGraphData',contributorsGraph);
-
-app.use('/commitsData', commitsData);
 app.use('/commitsGraph',commitsGraph);
+console.log("we are in app js");
+app.use('/commitsData', commitsData);
 app.use('/codeFrequencyGraph',codeFrequencyGraph);
 app.use('/codeFrequencyData', codeFrequencyData);
 app.use('/', routes);
 app.use('/users', users);
-//app.use('commits',);
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -78,6 +49,7 @@ app.use(function(req, res, next) {
 });
 
 // error handlers
+
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
