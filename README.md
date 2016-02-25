@@ -1,1 +1,0 @@
-# LogAggregator-Git
